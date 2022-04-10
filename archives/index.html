@@ -18,6 +18,15 @@
 
 
     
+    <style>
+        body{
+            background-image: url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
 
     <title>归档 | LaplacianSpell</title>
     <link rel="icon" type="image/png" href="/laplacianspell/favicon.png">
@@ -32,7 +41,9 @@
 
     <script src="/laplacianspell/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.1.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 
 <body>
@@ -324,9 +335,9 @@
                     var typed = new Typed("#subtitle", {
                         strings: [ 
                             
-                                "从来没有真正的绝境, 只有心灵的迷途",
+                                "信仰是为了虚妄之人",
                             
-                                "Never really desperate, only the lost of the soul",
+                                "信仰は儚き人間の為に",
                             
                         ],
                         startDelay: 300,
@@ -344,9 +355,7 @@
 
 
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/laplacianspell/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    $('.bg-cover').css('background-image', 'url(/laplacianspell/medias/banner/0.jpg)');
 </script>
 
 
@@ -470,11 +479,11 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/laplacianspell/2022/04/10/Preface/">
+                        <a href="/laplacianspell/2022/04/10/preface/">
                             <div class="card-image">
                                 
                                 
-                                <img src="/laplacianspell/medias/featureimages/8.jpg" class="responsive-img" alt="Preface">
+                                <img src="/laplacianspell/medias/featureimages/0.jpg" class="responsive-img" alt="Preface">
                                 
                                 <span class="card-title">Preface</span>
                             </div>
@@ -483,11 +492,10 @@
                             <div class="summary block-with-text">
                                 
                                     你好，这是我的第一篇博文，请多关照。
-我总觉得需要留下一些寻找关于我为何成为现在之我的痕迹，于是便有了此方圆洞天。
-这里没有别人，只有我自己；别人想来这里，既简单又困难，我可以放心的说话。
+我总觉得需要留下一些寻找关于我为何成为现在之我的痕迹，于是便有了此处，存放一些生活的琐碎与火花。
 这是属于我的世界。
 LaplacianSpell
-
+in Tsinghua UniversityHaidi
                                 
                             </div>
                             <div class="publish-info">
@@ -585,6 +593,9 @@ LaplacianSpell
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">81</span>
+            
             
             
                 
@@ -609,13 +620,9 @@ LaplacianSpell
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
 
 
-
-    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:pd20@mails.tsinghua.edu.cn" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -624,10 +631,6 @@ LaplacianSpell
 
 
 
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
 
 
 
@@ -773,6 +776,14 @@ $(function () {
     
 
     <!-- 鼠标星星特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/laplacianspell/libs/others/star.js"><\/script>');
+            }
+        </script>
     
 
      
@@ -799,8 +810,6 @@ $(function () {
     })();
 </script>
 
-    
-    <script src="/laplacianspell/libs/others/clicklove.js" async="async"></script>
     
     
     <script async src="/laplacianspell/libs/others/busuanzi.pure.mini.js"></script>
