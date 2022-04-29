@@ -376,10 +376,19 @@
                 
                 
                 
-                <a href="/laplacianspell/categories/Physics/" title="Physics: 1">
+                <a href="/laplacianspell/categories/Physics/" title="Physics: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
                             style="background-color: #F9EBEA;">Physics
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/laplacianspell/categories/Mathematics/" title="Mathematics: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F5EEF8;">Mathematics
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -395,6 +404,57 @@
 
     <article id="articles" class="container articles">
         <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/laplacianspell/2022/04/20/gamov-peak/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/laplacianspell/medias/featureimages/0.jpg" class="responsive-img" alt="The Gamov Peak">
+                            
+                            <span class="card-title">The Gamov Peak</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                What is Gamov Peak? 伽莫夫峰(Gamov Peak)，是一个描述恒星中发生核反应粒子的能量与反应速率积分：
+\dot{n}_{12} = n_1n_2\sqrt{\frac{8}{\pi m_\mu}}(kT)^{-3/
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-20
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/laplacianspell/categories/Physics/" class="post-category">
+                                    Physics
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/laplacianspell/tags/Physics/">
+                            <span class="chip bg-color">Physics</span>
+                        </a>
+                        
+                        <a href="/laplacianspell/tags/Astrophysics/">
+                            <span class="chip bg-color">Astrophysics</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -524,7 +584,7 @@ The key diff
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">1.7k</span>
+                        class="white-color">3.4k</span>
             
             
             
@@ -762,6 +822,21 @@ $(function () {
     <script src="/laplacianspell/libs/instantpage/instantpage.js" type="module"></script>
     
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 
 </html>

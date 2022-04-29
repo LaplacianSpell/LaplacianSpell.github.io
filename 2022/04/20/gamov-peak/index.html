@@ -5,7 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="The Gamov Peak, LaplacianSpell">
-    <meta name="description" content="">
+    <meta name="description" content="What is Gamov Peak? 伽莫夫峰(Gamov Peak)，是一个描述恒星中发生核反应粒子的能量与反应速率积分：
+\dot{n}_{12} = n_1n_2\sqrt{\frac{8}{\pi m_\mu}}(kT)^{-3/">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -441,14 +442,27 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/laplacianspell/tags/Physics-Astrophysics/">
-                                <span class="chip bg-color">-Physics -Astrophysics</span>
+                            <a href="/laplacianspell/tags/Physics/">
+                                <span class="chip bg-color">Physics</span>
+                            </a>
+                        
+                            <a href="/laplacianspell/tags/Astrophysics/">
+                                <span class="chip bg-color">Astrophysics</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/laplacianspell/categories/Physics/" class="post-category">
+                                Physics
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -471,7 +485,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    187
                 </div>
                 
 
@@ -493,7 +507,11 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="What-is-Gamov-Peak"><a href="#What-is-Gamov-Peak" class="headerlink" title="What is Gamov Peak?"></a>What is Gamov Peak?</h2><p> 伽莫夫峰(Gamov Peak)，是一个描述恒星中发生核反应粒子的能量与反应速率积分：</p>
+<script type="math/tex; mode=display">\dot{n}_{12} = n_1n_2\sqrt{\frac{8}{\pi m_\mu}}(kT)^{-3/2}\int S(E)\exp[-\pi(E_*/E)^{1/2}-(E/kT)]dE</script><p>中因子：</p>
+<script type="math/tex; mode=display">F = \exp[-\pi(E_*/E)^{1/2}-(E/kT)]</script><p>的图像，其中指数的第一项是Quantumn Tunneling影响的，它随着E的升高而升高；第二项是粒子的Maxwell-Boltzmann Distribution,它随着E的升高而降低，物理上可以解释为 $FdE$ 是表示粒子分布在 $[E,E+dE]$ 区域内能发生核反应的可能性。<br>上述可绘图为：<br><img src="https://gitee.com/Laplacian_Spell/PicGo/raw/master/img/Gamov.png" alt="Avatar"></p>
+<h2 id="How-to-Derive-Gamov-Peak"><a href="#How-to-Derive-Gamov-Peak" class="headerlink" title="How to Derive Gamov Peak?"></a>How to Derive Gamov Peak?</h2><h3 id="Coulomb-Barrier-Catastrophe"><a href="#Coulomb-Barrier-Catastrophe" class="headerlink" title="Coulomb-Barrier Catastrophe"></a>Coulomb-Barrier Catastrophe</h3><p>温度达不到足以令粒子越过Coloumb Barrier发生核融合。</p>
+<h3 id="Quantumn-Tunneling"><a href="#Quantumn-Tunneling" class="headerlink" title="Quantumn Tunneling"></a>Quantumn Tunneling</h3>
                 
             </div>
             <hr/>
@@ -507,8 +525,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/laplacianspell/tags/Physics-Astrophysics/">
-                                    <span class="chip bg-color">-Physics -Astrophysics</span>
+                                <a href="/laplacianspell/tags/Physics/">
+                                    <span class="chip bg-color">Physics</span>
+                                </a>
+                            
+                                <a href="/laplacianspell/tags/Astrophysics/">
+                                    <span class="chip bg-color">Astrophysics</span>
                                 </a>
                             
                         </div>
@@ -755,6 +777,13 @@
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
+
 
 
     <footer class="page-footer bg-color">
@@ -827,7 +856,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">1.7k</span>
+                        class="white-color">3.4k</span>
             
             
             
@@ -1065,6 +1094,21 @@ $(function () {
     <script src="/laplacianspell/libs/instantpage/instantpage.js" type="module"></script>
     
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 
 </html>
