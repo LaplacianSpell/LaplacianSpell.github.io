@@ -98,17 +98,6 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/laplacianspell/archives" class="waves-effect waves-light">
-      
-      <i class="fas fa-archive" style="zoom: 0.6;"></i>
-      
-      <span>归档</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
     <a href="/laplacianspell/about" class="waves-effect waves-light">
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
@@ -193,17 +182,6 @@
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
 			分类
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/laplacianspell/archives" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-archive"></i>
-			
-			归档
 		</a>
           
         </li>
@@ -378,7 +356,7 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/laplacianspell/">5</a></span>
+    <span class="count"><a href="/laplacianspell/">7</a></span>
     <span class="name">文章</span>
 </div>
 
@@ -408,7 +386,7 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/laplacianspell/">5</a></span>
+    <span class="count"><a href="/laplacianspell/">7</a></span>
     <span class="name">文章</span>
 </div>
 
@@ -540,7 +518,7 @@
         },
         xAxis: {
             type: 'category',
-            data: ["2021-04","2021-05","2021-06","2021-07","2021-08","2021-09","2021-10","2021-11","2021-12","2022-01","2022-02","2022-03","2022-04"]
+            data: ["2021-05","2021-06","2021-07","2021-08","2021-09","2021-10","2021-11","2021-12","2022-01","2022-02","2022-03","2022-04","2022-05"]
         },
         yAxis: {
             type: 'value',
@@ -550,7 +528,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,0,5],
+                data: [0,0,0,0,0,0,0,0,0,0,0,7,0],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -592,7 +570,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"Physics","value":2},{"name":"Mathematics","value":1}],
+                data: [{"name":"Physics","value":3},{"name":"Mathematics","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -616,7 +594,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["Physics","Astrophysics","Physics Learning","Statistic Mechanics","Mathematics","Linear Algebra"]
+                data: ["Physics","Astrophysics","Mathematics","Linear Algebra","Physics Learning","Statistic Mechanics"]
             }
         ],
         yAxis: [
@@ -629,7 +607,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [1,1,1,1,1,1],
+                data: [2,1,1,1,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -785,7 +763,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">3.4k</span>
+                        class="white-color">3.7k</span>
             
             
             
@@ -1023,21 +1001,6 @@ $(function () {
     <script src="/laplacianspell/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 
 </html>

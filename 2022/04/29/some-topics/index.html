@@ -4,9 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Bose-Einstein Distribution, LaplacianSpell">
-    <meta name="description" content="This is a Memo about Photon Gas0.Pre-Question(1)What are Boson and Fermion?Two big categories of particles.
-The key diff">
+    <meta name="keywords" content="Some-Interesting-Topics, LaplacianSpell">
+    <meta name="description" content="2022/4/29这是一些可以进行更加深入学习的一些话题。
+1.光电效应
+热电子发射的Richarson-Dushman Formula(1928 Noble Prize)
+
+金属自由电子能级的量子化(电子是Fermion):Fermi-D">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -29,7 +32,7 @@ The key diff">
     </style>
 
 
-    <title>Bose-Einstein Distribution | LaplacianSpell</title>
+    <title>Some-Interesting-Topics | LaplacianSpell</title>
     <link rel="icon" type="image/png" href="/laplacianspell/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/laplacianspell/libs/awesome/css/all.min.css">
@@ -304,7 +307,7 @@ The key diff">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Bose-Einstein Distribution</h1>
+                    <h1 class="description center-align post-title">Some-Interesting-Topics</h1>
                 </div>
             </div>
         </div>
@@ -420,12 +423,8 @@ The key diff">
                     
                     <div class="article-tag">
                         
-                            <a href="/laplacianspell/tags/Physics-Learning/">
-                                <span class="chip bg-color">Physics Learning</span>
-                            </a>
-                        
-                            <a href="/laplacianspell/tags/Statistic-Mechanics/">
-                                <span class="chip bg-color">Statistic Mechanics</span>
+                            <a href="/laplacianspell/tags/Physics/">
+                                <span class="chip bg-color">Physics</span>
                             </a>
                         
                     </div>
@@ -449,28 +448,28 @@ The key diff">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-16
+                    2022-04-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-26
+                    2022-04-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    779
+                    89
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 
@@ -485,22 +484,19 @@ The key diff">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="This-is-a-Memo-about-Photon-Gas"><a href="#This-is-a-Memo-about-Photon-Gas" class="headerlink" title="This is a Memo about Photon Gas"></a>This is a Memo about Photon Gas</h4><h2 id="0-Pre-Question"><a href="#0-Pre-Question" class="headerlink" title="0.Pre-Question"></a>0.Pre-Question</h2><h3 id="1-What-are-Boson-and-Fermion"><a href="#1-What-are-Boson-and-Fermion" class="headerlink" title="(1)What are Boson and Fermion?"></a>(1)What are Boson and Fermion?</h3><p>Two big categories of particles.</p>
-<p>The key difference between bosons and fermions is that bosons have an integer spin whereas fermions have a half–integer spin. Furthermore, the wave function of bosons is symmetric while the wave function of fermions is antisymmetric.<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
-<h3 id="2-In-which-state-shall-we-use-B-E-Distribution"><a href="#2-In-which-state-shall-we-use-B-E-Distribution" class="headerlink" title="(2)In which state shall we use B-E Distribution?"></a>(2)In which state shall we use B-E Distribution?</h3><p>三大统计：</p>
-<p>(a). Maxwell-Boltzmann Statistics.<br>(b). Bose-Einstein Statistics.<br>(c). Fermi-Dirac Statistics.</p>
-<p>Notation: $(a_i,b_j)$ 指的是粒子 $a$ 与 $b$ 分别占据量子态 $|i\rangle$ , $|j\rangle$</p>
-<p>此处的统计，指的是求M个粒子占据N个量子态下各种统计行为的概率，统计物理学的基本假设“等概率假设”认为，对于系统可能处在的各种状态，若没有其他条件限定，则认为处在的各种状态的概率相同。</p>
-<p>上面三种统计的区别在于对统计状态的认识，经典的M-B统计认为 $(a_i,b_j)$ 与 $(a_j,b_i) $分别是两种不同的统计状态。而B-E-S与F-D-S针对全同粒子(“Indistinguishable”)分别描述玻色子与费米子的统计行为，认为 $(a_i,b_j) = (a_j,b_i)$ [B-E-D]以及 $(a_i,b_j) = -(a_j,b_i)$ [F-D-S],特别的，对于后面一种，当 $i=j$ 时等于0，即全同粒子不能占据同一个量子态(Pauli Exclusion Principle).</p>
-<p>当量子效应比较明显的时候，我们需要使用量子统计，而M-B-D实际上是后两种统计在较高温或者是稀疏粒子情况下的近似</p>
-<h2 id="1-Photon-Gas"><a href="#1-Photon-Gas" class="headerlink" title="1.Photon Gas"></a>1.Photon Gas</h2><h3 id="1-Thermaldynamical-Equilibrium-of-Photon-Gas"><a href="#1-Thermaldynamical-Equilibrium-of-Photon-Gas" class="headerlink" title="(1)Thermaldynamical Equilibrium of Photon Gas"></a>(1)Thermaldynamical Equilibrium of Photon Gas</h3><p>  光子气体的热力学平衡是建立在光子气体与容器壁的相互作用上的，这不同于建立在粒子之间只发生完全弹性碰撞，没有其他的相互作用之上的M-B-D.</p>
-<p>  光子气体与一定温度 $T$ 的容器壁之间存在动态平衡，一方面，光子气体会被容器壁粒子吸收，使得容器壁粒子处在激发态，另一方面，一定温度容器壁中粒子也会释放光子.</p>
-<p>  建立在以上机制的光子气体，单位体积单位频带宽度的能量为：</p>
-<script type="math/tex; mode=display">u_v(T)=\frac{8\pi h \nu^3}{c^3}\frac{1}{\exp(h\nu/kT)-1}</script><h3 id="3-The-Einstein’s-Theory-of-Stimulated-Radiation"><a href="#3-The-Einstein’s-Theory-of-Stimulated-Radiation" class="headerlink" title="(3)The Einstein’s Theory of Stimulated Radiation"></a>(3)The Einstein’s Theory of Stimulated Radiation</h3><p>  下面我们基于Einstein的光激发理论来最终导出黑体辐射平衡光子气体的能量分布</p>
-<h3 id="2-“Diffusion”-of-Photon-Gas"><a href="#2-“Diffusion”-of-Photon-Gas" class="headerlink" title="(2) “Diffusion” of Photon Gas"></a>(2) “Diffusion” of Photon Gas</h3><p>  下面可以考虑在光子气体容器壁上开一个小窗口，面积为 $dA$ ,可以计算单位面积，单位时间逸出的光子能量.<br>  处在黑体辐射平衡的光子气体能流密度：</p>
-<script type="math/tex; mode=display">J = \rho v = u_v(T)c</script><p>  其物理意义为处在温度为 $T$ 的黑体辐射平衡的光子气体，容器小孔上单位面积在单位时间，单位频谱宽度上通过的能量.</p>
-<p>  光子通过窗口之后会向空间中各个方向辐射，我们可以得到其每单位立体角的能流密度，也就是黑体辐射的Planck formula：</p>
-<script type="math/tex; mode=display">I_v(T) = \frac{2h\nu^3}{c^2}\frac{1}{\exp(h\nu/kT)-1}</script>
+                <h2 id="2022-4-29"><a href="#2022-4-29" class="headerlink" title="2022/4/29"></a>2022/4/29</h2><p>这是一些可以进行更加深入学习的一些话题。</p>
+<h3 id="1-光电效应"><a href="#1-光电效应" class="headerlink" title="1.光电效应"></a>1.光电效应</h3><ul>
+<li><p>热电子发射的Richarson-Dushman Formula(1928 Noble Prize)</p>
+</li>
+<li><p>金属自由电子能级的量子化(电子是Fermion):Fermi-Dirac Distribution</p>
+</li>
+<li><p>通过光的受激发理论(Einstein)，得到光子气体的能量密度</p>
+</li>
+</ul>
+<h3 id="2-天体物理学"><a href="#2-天体物理学" class="headerlink" title="2.天体物理学"></a>2.天体物理学</h3><ul>
+<li>加莫夫峰</li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -514,12 +510,8 @@ The key diff">
                     
                         <div class="article-tag">
                             
-                                <a href="/laplacianspell/tags/Physics-Learning/">
-                                    <span class="chip bg-color">Physics Learning</span>
-                                </a>
-                            
-                                <a href="/laplacianspell/tags/Statistic-Mechanics/">
-                                    <span class="chip bg-color">Statistic Mechanics</span>
+                                <a href="/laplacianspell/tags/Physics/">
+                                    <span class="chip bg-color">Physics</span>
                                 </a>
                             
                         </div>
@@ -567,17 +559,18 @@ The key diff">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/laplacianspell/2022/04/20/gamov-peak/">
+                <a href="/laplacianspell/2022/04/29/some-topics/">
                     <div class="card-image">
                         
                         
-                        <img src="/laplacianspell/medias/featureimages/0.jpg" class="responsive-img" alt="The Gamov Peak">
+                        <img src="/laplacianspell/medias/featureimages/2.jpg" class="responsive-img" alt="Some-Interesting-Topics">
                         
-                        <span class="card-title">The Gamov Peak</span>
+                        <span class="card-title">Some-Interesting-Topics</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -587,9 +580,9 @@ The key diff">
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -602,15 +595,12 @@ The key diff">
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
                     <a href="/laplacianspell/tags/Physics/">
                         <span class="chip bg-color">Physics</span>
-                    </a>
-                    
-                    <a href="/laplacianspell/tags/Astrophysics/">
-                        <span class="chip bg-color">Astrophysics</span>
                     </a>
                     
                 </div>
@@ -624,13 +614,13 @@ The key diff">
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/laplacianspell/2022/04/11/xu/">
+                <a href="/laplacianspell/2022/04/29/to-do-list/">
                     <div class="card-image">
                         
                         
-                        <img src="/laplacianspell/medias/featureimages/0.jpg" class="responsive-img" alt="序">
+                        <img src="/laplacianspell/medias/featureimages/2.jpg" class="responsive-img" alt="To-Do List">
                         
-                        <span class="card-title">序</span>
+                        <span class="card-title">To-Do List</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -641,7 +631,7 @@ The key diff">
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-29
                             </span>
                         <span class="publish-author">
                             
@@ -765,13 +755,6 @@ The key diff">
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
-    });
-</script>
 
 
 
