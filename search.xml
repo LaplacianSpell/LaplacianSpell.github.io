@@ -20,9 +20,9 @@
       
         <tags>
             
-            <tag> Group Theory </tag>
-            
             <tag> Mathematics </tag>
+            
+            <tag> Group Theory </tag>
             
         </tags>
       
@@ -114,7 +114,7 @@
       <link href="/laplacianspell/2022/04/29/to-do-list/"/>
       <url>/laplacianspell/2022/04/29/to-do-list/</url>
       
-        <content type="html"><![CDATA[<h3 id="优先级说明"><a href="#优先级说明" class="headerlink" title="优先级说明"></a>优先级说明</h3><ol><li><p><strong>U</strong> Urgent</p></li><li><p><strong>N</strong> Normal</p></li><li><p><strong>L</strong> Long-term</p></li></ol><h3 id="待办"><a href="#待办" class="headerlink" title="待办"></a>待办</h3><p>学习Web全栈开发<br>学习Linux操作系统的知识<br>学习pytorch以及图像处理的相关知识</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="优先级说明"><a href="#优先级说明" class="headerlink" title="优先级说明"></a>优先级说明</h3><ol><li><p><strong>U</strong> Urgent</p></li><li><p><strong>N</strong> Normal</p></li><li><p><strong>L</strong> Long-term</p></li></ol><h3 id="待办"><a href="#待办" class="headerlink" title="待办"></a>待办</h3><p>学习Web全栈开发<br>学习Linux操作系统的知识<br>学习pytorch以及图像处理的相关知识</p><p>scipy.integrate.odeint 常微分方程运算<br><img src="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html" alt="Int"></p>]]></content>
       
       
       
