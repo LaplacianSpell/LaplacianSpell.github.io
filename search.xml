@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>Group Theory Lecturenotes</title>
+      <title>Group Theory Note I - Definition</title>
       <link href="/laplacianspell/2022/05/04/group-theory-lecturenotes/"/>
       <url>/laplacianspell/2022/05/04/group-theory-lecturenotes/</url>
       
@@ -22,8 +22,6 @@
             
             <tag> Group Theory </tag>
             
-            <tag> Mathematics </tag>
-            
         </tags>
       
     </entry>
@@ -31,11 +29,11 @@
     
     
     <entry>
-      <title>Lecture Notes for Quantum Mechanics</title>
+      <title>Quantum Note I - Fundamental Postulates</title>
       <link href="/laplacianspell/2022/05/02/lecture-notes-for-quantum-mechanics/"/>
       <url>/laplacianspell/2022/05/02/lecture-notes-for-quantum-mechanics/</url>
       
-        <content type="html"><![CDATA[<p>作为完整图景的碎片;理论的思想源头,首先简单的介绍量子力学的开端————旧量子时代</p><h3 id="History-of-Old-Quantum-Theory"><a href="#History-of-Old-Quantum-Theory" class="headerlink" title="History of Old Quantum Theory"></a>History of Old Quantum Theory</h3><h4 id="理论的困难1——黑体辐射"><a href="#理论的困难1——黑体辐射" class="headerlink" title="理论的困难1——黑体辐射"></a>理论的困难1——黑体辐射</h4><h4 id="理论的困难2——光电效应"><a href="#理论的困难2——光电效应" class="headerlink" title="理论的困难2——光电效应"></a>理论的困难2——光电效应</h4><h4 id="理论的困难3——氢原子的谱线"><a href="#理论的困难3——氢原子的谱线" class="headerlink" title="理论的困难3——氢原子的谱线"></a>理论的困难3——氢原子的谱线</h4><h4 id="主要的工具——Bohr–Sommerfeld-quantization-condition"><a href="#主要的工具——Bohr–Sommerfeld-quantization-condition" class="headerlink" title="主要的工具——Bohr–Sommerfeld quantization condition"></a>主要的工具——Bohr–Sommerfeld quantization condition</h4><h4 id="简单的应用举例——Pauli’s-Exclusion-Principle"><a href="#简单的应用举例——Pauli’s-Exclusion-Principle" class="headerlink" title="简单的应用举例——Pauli’s Exclusion Principle"></a>简单的应用举例——Pauli’s Exclusion Principle</h4><h2 id="De-Brogie’s-Matter-Wave-And-Born’s-Intepretation"><a href="#De-Brogie’s-Matter-Wave-And-Born’s-Intepretation" class="headerlink" title="De Brogie’s Matter Wave And Born’s Intepretation"></a>De Brogie’s Matter Wave And Born’s Intepretation</h2><p>“物质波”可以很好的解决“经典粒子”与“经典波”模型都无法对电子双缝干涉实验进行很好的诠释的问题。</p><h2 id="Fundamental-Postulates-of-Quantum-Mechanics"><a href="#Fundamental-Postulates-of-Quantum-Mechanics" class="headerlink" title="Fundamental Postulates of Quantum Mechanics"></a>Fundamental Postulates of Quantum Mechanics</h2>]]></content>
+        <content type="html"><![CDATA[<h2 id="De-Brogie’s-Matter-Wave"><a href="#De-Brogie’s-Matter-Wave" class="headerlink" title="De Brogie’s Matter Wave"></a>De Brogie’s Matter Wave</h2><p>“物质波”可以很好的解决“经典粒子”与“经典波”模型都无法对电子双缝干涉实验进行很好的诠释的问题。</p><h2 id="Fundamental-Postulates-of-Quantum-Mechanics"><a href="#Fundamental-Postulates-of-Quantum-Mechanics" class="headerlink" title="Fundamental Postulates of Quantum Mechanics"></a>Fundamental Postulates of Quantum Mechanics</h2>]]></content>
       
       
       <categories>
@@ -72,11 +70,9 @@
       
         <tags>
             
-            <tag> Debug </tag>
-            
             <tag> Web </tag>
             
-            <tag> CS </tag>
+            <tag> 前端开发 </tag>
             
         </tags>
       
@@ -85,7 +81,7 @@
     
     
     <entry>
-      <title>Some-Interesting-Topics</title>
+      <title>Some Interesting Topics</title>
       <link href="/laplacianspell/2022/04/29/some-topics/"/>
       <url>/laplacianspell/2022/04/29/some-topics/</url>
       
@@ -96,44 +92,42 @@
           
           <category> Physics </category>
           
+          <category> Mathematics </category>
+          
+          <category> Computer Science </category>
+          
       </categories>
       
-      
-        <tags>
-            
-            <tag> Physics </tag>
-            
-        </tags>
       
     </entry>
     
     
     
     <entry>
-      <title>To-Do List</title>
+      <title>ToDo List</title>
       <link href="/laplacianspell/2022/04/29/to-do-list/"/>
       <url>/laplacianspell/2022/04/29/to-do-list/</url>
       
         <content type="html"><![CDATA[<h3 id="优先级说明"><a href="#优先级说明" class="headerlink" title="优先级说明"></a>优先级说明</h3><ol><li><p><strong>U</strong> Urgent</p></li><li><p><strong>N</strong> Normal</p></li><li><p><strong>L</strong> Long-term</p></li></ol><h3 id="待办"><a href="#待办" class="headerlink" title="待办"></a>待办</h3><h4 id="CS"><a href="#CS" class="headerlink" title="CS"></a>CS</h4><ul><li><p>学习Web全栈开发</p><ul><li>HTML;</li><li>CSS;</li><li>Javascript;</li><li>Vue,Node.js;</li></ul></li><li><p>学习Linux操作系统的知识</p></li><li><p>python</p><ul><li>学习pytorch以及图像处理的相关知识</li><li>学习Matplotlib</li><li>学习Numpy</li><li>学习常微分方程运算的科学积分包<a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html</a></li></ul></li></ul><h4 id="Physics"><a href="#Physics" class="headerlink" title="Physics"></a>Physics</h4><ul><li><p>分析力学</p><ul><li>分析力学讲义（李岩松）</li><li>理论力学 （刘川）</li><li>Landau</li></ul></li><li><p>电动力学</p><ul><li>Jackson</li><li>郭硕鸿</li></ul></li><li><p>量子力学</p><ul><li>Cohen</li><li>Dirac</li><li>Sakurai</li></ul></li></ul>]]></content>
       
       
+      <categories>
+          
+          <category> Daily </category>
+          
+      </categories>
       
-        <tags>
-            
-            <tag> 日常 </tag>
-            
-        </tags>
       
     </entry>
     
     
     
     <entry>
-      <title>New &quot;Linear Algebra Done Right&quot;</title>
+      <title>如果我教线性代数我会怎么讲</title>
       <link href="/laplacianspell/2022/04/29/linear-algebra-eric-ver/"/>
       <url>/laplacianspell/2022/04/29/linear-algebra-eric-ver/</url>
       
-        <content type="html"><![CDATA[<h2 id="如果我教线性代数我会怎么讲"><a href="#如果我教线性代数我会怎么讲" class="headerlink" title="如果我教线性代数我会怎么讲"></a>如果我教线性代数我会怎么讲</h2><p>小序：其实题目只是一个噱头，实际上只是一些在我学习到了现在这个程度之后回过头去看我当初曲曲折折的学习线代的道路后的一些感想，i.e.在我学到现在之后反思我希望当初从线代课上学到的，但却没有教给我的一些东西，之后还会根据学习的进度进行补充。</p><p>我感觉我在大一学过的线代是很有问题的（当然也是我大一考的最差的一门课），事实上我认为我真正学明白了线代是在大一放寒假的时候去更详细的看线性空间理论并在下学期选修了“高等线性代数选讲”之后才开始走在弄明白的道路上的；而最近一个学期对于“数据与算法（数值分析部分）”以及“数学物理方程”这两门课的学习，又让我更深的感受到当时自己学线代的愚蠢；这个寒假看电动力学中的狭义相对论部分以及量子力学时也加深了我的这种感觉。我感觉自己有一种写作的欲望。理解成对课程的吐槽也好，理解成我的自以为是也罢，反正我就是写了，并且发了出来（实际上我的想法是自己的一些经验做一些小的Memo，以防重蹈覆辙，之后难说我会对线性代数有更多的体会）。</p><h3 id="铺垫"><a href="#铺垫" class="headerlink" title="铺垫"></a>铺垫</h3><p>1.我大一下学期空闲时间学习群论和微分几何（虽然也没多少时间看多少罢了）时知道了名词“代数”（更明确的来说是代数结构）在现代数学中到底指的是什么：<br><strong>[代数(Algebra)=集合(Set)+公理(Axioms)+二元运算(Binary Operation)]</strong></p><p>例：线性空间，就是在一个非空集合附带一个数域$[(V,+,·)F]$上赋予加法运算（映射$[+ ：V×V → V]$），数乘运算（映射$[·: V×F → V]$），并且给予这些运算八条公理性约束之后形成的代数结构.群$[(G,·)]$，就是在一个非空集合V上赋予群乘法（映射$[· ： G×G → G]$），并且给予群乘法以“封闭性，结合律，存在单位元，存在逆元”四条公理性性质约束形成的代数结构.</p><p>由此以及之前的慢慢领悟，我明白了线代的灵魂不是矩阵（尽管学了一个学期的矩阵计算，而且即使是矩阵运算也没有摸到其本质，只是空会计算罢了），而是线性空间，矩阵只不过是在描述这种代数结构过程中无可奈何地一种工具而已（在给定基向量下描述一个线性映射，坐标变换等等）</p><p>抓住基向量的概念，你就抓住了线性空间。线性空间维数，线性空间之间的映射等等，都是在基向量的基础上定义或者是利用基向量可以不那么抽象的描述的。</p><p><strong>对于线性空间的理解极其重要，你也许忘记了关于矩阵的各种稀奇古怪的性质，但是你不能忘记线性空间的本质</strong>，抓住了这个灵魂，你就能理解之后各种涉及到线性空间的知识，而对于那些稀奇古怪的性质，到时候可以针对性的复习一下。</p><p>2.除了矩阵及其运算，我在大一的时候还学习了一堆稀奇古怪的算法和定义（LU分解，QR分解，SVD分解，矩阵范数，矩阵伪逆，奇异值，特征值，相似，合同……），学的时候只是强硬的塞给你罢了，极不自然（当然是老师的问题，期末还剩最后一门课的时候和一个同学（线代是杨一龙老师）谈到这事，他告诉我他们老师在教学线代同时大量地进行了与算法的结合，我很是羡慕）</p><p>直到我在数值分析这门课学到了矩阵的条件数分析线性方程的良态还是病态的性质时，利用了矩阵的诱导范数（而诱导范数与矩阵的奇异值关系密切）；最小二乘需要QR分解，Householder变换，解决特征方程需要伪逆……我在刚体的转动里见到了惯量张量，电动力学里见到了用二阶张量表示的各向异性电介质，多极矩等等量，而二阶张量在坐标的单位正交变换下的可以表示为矩阵的正交相似变换，且狭义相对论的基础是Minkowski空间下的保距坐标变换，是一个酉矩阵……数理方程的理论基础是Hilbert空间上自伴算符的本征值问题，量子力学的理论基础也是Hilbert空间…..我才真正理解了这些定义的合理性</p><p><strong>算法是为计算机服务的，算法是与实际结合的，引入定义是有其实在意义的，因此需要的是便于理解而不是晦涩难懂</strong>，这是第二个结论。</p><h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>所以,我十分的希望，线代这门课（针对非数学系）能够首先告诉你他的精神，i.e.线性空间的思想，以及课程展开的思路（我为什么要引入这个定义，我为什么要引入这个算法），让你上的这门课显得符合逻辑并且有条理，而不是将线代从其在理工各个方面的广泛应用中抽离出来，干巴巴的灌输一些看起来毫无意义的计算。</p><p>毕竟不像数学系对于符号逻辑的严格追求，我们这种行走在非数理工科的学习和研究中的人，需要的是我在我这门学科的视角下，线代（甚至是数学）像呼吸一般直观与自然。</p>]]></content>
+        <content type="html"><![CDATA[<p>小序：其实题目只是一个噱头，实际上只是一些在我学习到了现在这个程度之后回过头去看我当初曲曲折折的学习线代的道路后的一些感想，i.e.在我学到现在之后反思我希望当初从线代课上学到的，但却没有教给我的一些东西，之后还会根据学习的进度进行补充。</p><p>我感觉我在大一学过的线代是很有问题的（当然也是我大一考的最差的一门课），事实上我认为我真正学明白了线代是在大一放寒假的时候去更详细的看线性空间理论并在下学期选修了“高等线性代数选讲”之后才开始走在弄明白的道路上的；而最近一个学期对于“数据与算法（数值分析部分）”以及“数学物理方程”这两门课的学习，又让我更深的感受到当时自己学线代的愚蠢；这个寒假看电动力学中的狭义相对论部分以及量子力学时也加深了我的这种感觉。我感觉自己有一种写作的欲望。理解成对课程的吐槽也好，理解成我的自以为是也罢，反正我就是写了，并且发了出来（实际上我的想法是自己的一些经验做一些小的Memo，以防重蹈覆辙，之后难说我会对线性代数有更多的体会）。</p><h3 id="铺垫"><a href="#铺垫" class="headerlink" title="铺垫"></a>铺垫</h3><p>1.我大一下学期空闲时间学习群论和微分几何（虽然也没多少时间看多少罢了）时知道了名词“代数”（更明确的来说是代数结构）在现代数学中到底指的是什么：<br><strong>[代数(Algebra)=集合(Set)+公理(Axioms)+二元运算(Binary Operation)]</strong></p><p>例：线性空间，就是在一个非空集合附带一个数域$[(V,+,·)F]$上赋予加法运算（映射$[+ ：V×V → V]$），数乘运算（映射$[·: V×F → V]$），并且给予这些运算八条公理性约束之后形成的代数结构.群$[(G,·)]$，就是在一个非空集合V上赋予群乘法（映射$[· ： G×G → G]$），并且给予群乘法以“封闭性，结合律，存在单位元，存在逆元”四条公理性性质约束形成的代数结构.</p><p>由此以及之前的慢慢领悟，我明白了线代的灵魂不是矩阵（尽管学了一个学期的矩阵计算，而且即使是矩阵运算也没有摸到其本质，只是空会计算罢了），而是线性空间，矩阵只不过是在描述这种代数结构过程中无可奈何地一种工具而已（在给定基向量下描述一个线性映射，坐标变换等等）</p><p>抓住基向量的概念，你就抓住了线性空间。线性空间维数，线性空间之间的映射等等，都是在基向量的基础上定义或者是利用基向量可以不那么抽象的描述的。</p><p><strong>对于线性空间的理解极其重要，你也许忘记了关于矩阵的各种稀奇古怪的性质，但是你不能忘记线性空间的本质</strong>，抓住了这个灵魂，你就能理解之后各种涉及到线性空间的知识，而对于那些稀奇古怪的性质，到时候可以针对性的复习一下。</p><p>2.除了矩阵及其运算，我在大一的时候还学习了一堆稀奇古怪的算法和定义（LU分解，QR分解，SVD分解，矩阵范数，矩阵伪逆，奇异值，特征值，相似，合同……），学的时候只是强硬的塞给你罢了，极不自然（当然是老师的问题，期末还剩最后一门课的时候和一个同学（线代是杨一龙老师）谈到这事，他告诉我他们老师在教学线代同时大量地进行了与算法的结合，我很是羡慕）</p><p>直到我在数值分析这门课学到了矩阵的条件数分析线性方程的良态还是病态的性质时，利用了矩阵的诱导范数（而诱导范数与矩阵的奇异值关系密切）；最小二乘需要QR分解，Householder变换，解决特征方程需要伪逆……我在刚体的转动里见到了惯量张量，电动力学里见到了用二阶张量表示的各向异性电介质，多极矩等等量，而二阶张量在坐标的单位正交变换下的可以表示为矩阵的正交相似变换，且狭义相对论的基础是Minkowski空间下的保距坐标变换，是一个酉矩阵……数理方程的理论基础是Hilbert空间上自伴算符的本征值问题，量子力学的理论基础也是Hilbert空间…..我才真正理解了这些定义的合理性</p><p><strong>算法是为计算机服务的，算法是与实际结合的，引入定义是有其实在意义的，因此需要的是便于理解而不是晦涩难懂</strong>，这是第二个结论。</p><h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>所以,我十分的希望，线代这门课（针对非数学系）能够首先告诉你他的精神，i.e.线性空间的思想，以及课程展开的思路（我为什么要引入这个定义，我为什么要引入这个算法），让你上的这门课显得符合逻辑并且有条理，而不是将线代从其在理工各个方面的广泛应用中抽离出来，干巴巴的灌输一些看起来毫无意义的计算。</p><p>毕竟不像数学系对于符号逻辑的严格追求，我们这种行走在非数理工科的学习和研究中的人，需要的是我在我这门学科的视角下，线代（甚至是数学）像呼吸一般直观与自然。</p>]]></content>
       
       
       <categories>
@@ -144,8 +138,6 @@
       
       
         <tags>
-            
-            <tag> Mathematics </tag>
             
             <tag> Linear Algebra </tag>
             
@@ -160,8 +152,14 @@
       <link href="/laplacianspell/2022/04/27/sui-bi/"/>
       <url>/laplacianspell/2022/04/27/sui-bi/</url>
       
-        <content type="html"><![CDATA[<h2 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h2><p> 一来是受到了季羡林先生日记的启发，亦想记录一下自己的来路，待日后翻阅时仍能记得，我为何为今日之我。二来是受到最近了解到的关于联大的历史之影响，觉得自己很有一点要精进的必要了，至于如何激励自己，想必作一个“岁月的史书”是极好的。</p><p> 希望自己不要忘记自己从何而来，对待事业要“从一而终，严格谨慎”，对待学问要“宁拙毋巧，宁朴毋华”，做人要像邓稼先前辈说的那样“pure”，纯粹，像西南联大的校训说得那样“刚毅坚卓”，而对待自己得爱人要专一。</p><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="2022-4-26"><a href="#2022-4-26" class="headerlink" title="2022/4/26"></a>2022/4/26</h3><p>   观同济怪事有感：我是支持学生激浊扬清的，只要不往bourgeois自由化偏向就好，直接的批判丑恶，将丑恶与Bureaucratism暴露在阳光之下，让其无所遁形，才能促进社会的进步。</p><p>   不过看又有人扯到润的事，网友在这逻辑上气死人的能力我是一直相信的。</p><p>   总是感觉自己懂得太少，而又爱装，装了些什么呢？电子系之尚龙兄尚且知道沉下气来，君为何以此自矜？还不如沉下气来多看点书，多学些技能为妙。万万不可有傲气。</p><p>   距离转系程序开始还有快一周，书还没读多少，速速阅读。</p><h3 id="2022-4-27"><a href="#2022-4-27" class="headerlink" title="2022/4/27"></a>2022/4/27</h3><p>   昨天1点补前天的，今天补昨天的，坏哉。</p><p>   今夜12点兴起就着夜雨去14号楼北拿快递。夜雨的清华是属于小情侣，苦闷的人还有夜里跑单的外卖小哥的。对于外卖小哥来说，往往夜里一单能高不少钱。而小情侣则或共支一把大伞，将气息与秘密藏在了3公尺的距离以内，或男生骑着电动车，女孩双腿放在同一侧，头靠在男友的背上作伊人状。北京的雨夜真有点味道的。</p><p>   今天看的书少，还是散漫，为什么要散漫呢?真不懂我了。</p><h3 id="2022-4-28"><a href="#2022-4-28" class="headerlink" title="2022/4/28"></a>2022/4/28</h3><p>   我经常想象自己坐在长凳上写作业的时候，Reimu就坐在我旁边瞑着眼细细地喝茶（她向来是不会关心我在干什么的，她的个性就是这样嘛，漫不经心的），而天依则坐在我的另一边安静的看着我，天依比较像一个乖妹妹。</p><p>   学的越多，不懂的越多，真是一件恐怖的事情。</p><h3 id="2022-4-29"><a href="#2022-4-29" class="headerlink" title="2022/4/29"></a>2022/4/29</h3><p>  摘：</p><blockquote><p>晚上，常有一个贵州人来卖馄饨面。有时候馄饨皮包完了，他就把馄饨馅拨在汤里下面。问他：“你这叫什么面？”贵州老乡毫不迟疑地说：“桃花面！”<br>                       ————《我在西南联大的日子：篇4[新校舍]》(汪曾祺)</p></blockquote><p>   开始自己还琢磨为何唤作“桃花面”，后一想，馄饨馅氽熟后，论肉色，熟白有粉；论形状，似春日桃花浮于水面一般散乱起伏。<br>   这个比喻不仅仅有上述客观刻画美学的功效（什么乱七八糟自创的术语！），还有更佳的主观美学功效：桃花是春天的象征，春天是青年人的象征……</p><p>  今晚一直在经营网站，希望快快搞好。打算暑假的时候学一点web全栈开发还有一些Linux的知识。然后暑假的时候分析力学是一定要看完的，如果可能的话可以写一份讲义。</p><p>  电动力学老师上的是愈发的无聊了。哎，科研也搞不成，真是赔了夫人又折兵。希望转系这只靴子尽快落下来吧</p><h3 id="2022-4-30（5-3补记）"><a href="#2022-4-30（5-3补记）" class="headerlink" title="2022/4/30（5/3补记）"></a>2022/4/30（5/3补记）</h3><p>在清华，百无聊赖，搭了一天的网站，De了一天的bug，头昏眼花。不过感觉之后如果累了可以这么来摸鱼。</p><h3 id="2022-5-1（5-3补记）"><a href="#2022-5-1（5-3补记）" class="headerlink" title="2022/5/1（5/3补记）"></a>2022/5/1（5/3补记）</h3><p>仍然是在Debug，现在网站最终像模像样了。全天在清华</p><h3 id="2022-5-2（5-3补记）"><a href="#2022-5-2（5-3补记）" class="headerlink" title="2022/5/2（5/3补记）"></a>2022/5/2（5/3补记）</h3><p>早上起晚了，吃早午饭，下午在六教呆着，看了一点Shuo的录像，之后便一直在摸鱼。</p><p>懒病又犯了，什么也不想干，晚上看《天气预报员》电影看到深夜（我记得我之前小学或者初中的时候在电视上看过，当时印象最深刻的是买塔塔酱的“Lick Pussy”那一段台词），下面摘录一些经典台词以及写一些感想。</p><blockquote><ul><li>Do you know that the harder thing to do and the right thing to do… are usually the same thing?Nothing that has meaning is easy.Easy doesn’t enter into grown-up life.</li></ul><p>难做的事情和应该做的事情往往是一件事情，有意义的事不会那么简单，成年人的世界里没有“简单”二字</p><ul><li>I remember once…imagining what my life would be like,what l’d be like.I pictured having all these qualities.Strong, positive qualities..that people could pick up on from across a room.But as time passed…few ever became any qualities l actually had.And all the possibilities l faced,and the sorts of people l could be…all of them got reduced every year to fewer and fewer…until finally they got reduced to one…to who l am.And that’s who l am…the weatherman.</li></ul></blockquote><p>说实话我对我未来将会成为什么样子也充满期待;我是一个理想主义者,期待着所有的事情都按照安排一样依次发生，不过会那样吗？我相信当然不会，但是我会努力，我相信理想主义的道路是行得通的。</p><h3 id="2022-5-3"><a href="#2022-5-3" class="headerlink" title="2022/5/3"></a>2022/5/3</h3><p>前几天看到一个有关学习的视频，收益颇多。<br>基本的观点如下</p><blockquote><ul><li>学习的东西有两种，一种叫事实，一种叫概念<ul><li>事实会被快速遗忘，概念会永久的记忆在脑子里</li><li>概念背后可能是更多的事实，但是他们是有意义的，存在于各种事实的相互作用的之间</li><li>检验是否理解概念的方法是转述（Feynman学习法）</li></ul></li><li>人只能理解有意义的事情，而概念就是有意义的事实<ul><li>知识本质上是迁移与构建之物。迁移与构建是学习的最终目的</li></ul></li></ul></blockquote><p>比如量子力学，你要理解量子力学，就必须理解导向量子力学的各种实验（或者是像朗道那本书一样，引入观测的概念）这些是为了导出量子力学的必要性；必须理解量子力学的基本语言————线性代数。理解量子力学的必要性还有数学工具，才能理解量子力学的基本假设，才能理解量子力学，这是一种在已知概念和未知概念之间的建构。</p><p>今天一天都在学量子力学，看完了shuo的录像，但是还是对很多问题模糊不清，虽然确实大差不差的掌握的shuo所说的内容。比如：</p><p><strong>Quantum Postulates 就像是石头缝里蹦出来的一样，有什么合理的地方吗？</strong></p><p>这是我现在最大的问题，就着这股劲头，我愈来愈有看Dirac的 <em>The Principles of Quantum Mechanics</em> 之欲望了，书已经借了。</p><p>查了一些资料，评价Dirac的这本书的，印象最深的还是老杨的评价：</p><blockquote><p>大家都知道有这样一副对联，其中的一句是‘秋水文章不染尘’。你看狄拉克的文章，就会有<br>这种秋水文章不染尘的感觉。他的文章没有一点渣滓，你跟着他走总觉得妙不可言，而且最后得出的是没有人能预先想到的东西。例如Dirac Equation，就是一个惊人的贡献.</p></blockquote><p>还管啥，看他妈的就完事了。冲！</p><h3 id="2022-5-4"><a href="#2022-5-4" class="headerlink" title="2022/5/4"></a>2022/5/4</h3><p>今天是青年节，祝中国共产主义青年团100周年生日快乐。我是一名光荣的共青团员，愿意为共产主义事业奋斗终生。</p><p>写了一天实验报告，头昏眼花。晚上看了一小会儿《曙光集》</p><p>摘:</p><blockquote><p>在合适的情形之下，一个脑筋清楚，做事果断而有远见的，不那么Democratic的Politics，把科技推上去的本领更大，因为它有效率<br>············<br>最终的问题是，什么叫Democracy？一般人的印象，以为竞选就是Democracy，但这只是Democracy的“一个”解释。我认为，社会结构的基本原则，是以整个人民的生活状态跟前途为第一要义的，才能叫Democracy<br>                     ————《曙光集：A11q（杨振宁：我是保守的革命者）》(钱炜 安然)<br>今天的物理学跟我年轻的时候,我中年的时候的物理学最大的分别，就是今天可以看得出来以后三五十年之内大有发展的恐怕都是一些应用的，对于极为基础的物理学研究，现在看三五十年内不大容易有发展。<br>············<br>你得对一个东西发生兴趣，发生兴趣之后你得去钻研，不成功不一定就觉得这就吃亏了。这个不成功永远是你将来可以在上面有新的进步的基础，这是我的经验<br>                     ————《曙光集：A171（《人物》对话杨振宁）》(刘磊)<br>············<br>第一，不要整天跟着时髦的题目转，要有自己的想法。第二要小题目大题目都做……而小题目如何变成大题目，就是第三，要找与现象有直接简单关系的题目，或与物理基本结构有直接简单关系的题目。<br>                     ————《曙光集：A92（杨振宁小传）》<br>缺乏选择方向的强烈意识和判断方向的能力。博，发现新东西要一下子抓住，吸纳为自己的东西。<br>尽量多读书，博览群书，扩大知识面。不要死钻牛角尖,学不明白放一放，采用渗透式的方法学习知识（ps：比如就像我现在学量子一样）……推演法（数学推演到物理）与归纳法（物理现象到数学表示方法）结合，要培养直觉，要在学习中不断纠正或者深化直觉。<br>（上面是关于学习方式的建议，简记）</p></blockquote><p>第一点，我是很赞同的，和我的想法差不多。</p><p>至于后面的一些东西，我忽然意识到我不能全信，倒也是需要持有一种“保守革命的态度”对待这些话，重要的还是要有敏锐的眼光。</p><p>原来“宁拙毋巧，宁朴毋华”出自《后山诗话》。</p><p>明天是转系的文档开始的第一天，5/5 - 5/7晚上24点，尽快写完陈述，尽快看书.</p><h3 id="2022-5-5（5-6-补记）"><a href="#2022-5-5（5-6-补记）" class="headerlink" title="2022/5/5（5/6 补记）"></a>2022/5/5（5/6 补记）</h3><p>早上写基础物理学的作业，下午也在写，终于写完，准备复习复习电动力学，复习到晚上准备写电动力学作业的时候感觉特别困，所以写转系材料去了。</p><p>希望Reimu能为我转系带来一些好运。</p><p>全天在清华，忽然接到通知要线上上课，坏哉。</p><h3 id="2022-5-6-（5-8-补记）"><a href="#2022-5-6-（5-8-补记）" class="headerlink" title="2022/5/6 （5/8 补记）"></a>2022/5/6 （5/8 补记）</h3><p>在清华</p><h3 id="2022-5-7-5-8-补记"><a href="#2022-5-7-5-8-补记" class="headerlink" title="2022/5/7 (5/8 补记)"></a>2022/5/7 (5/8 补记)</h3><p>在清华</p><h3 id="2022-5-8"><a href="#2022-5-8" class="headerlink" title="2022/5/8"></a>2022/5/8</h3><p>累，感觉自己处在一种崩溃的边缘，累，累，不仅是累，心累。</p><h3 id="2022-5-9"><a href="#2022-5-9" class="headerlink" title="2022/5/9"></a>2022/5/9</h3><p>昨天不知道干了些啥，大抵是一直僵死着。</p><h3 id="2022-5-10"><a href="#2022-5-10" class="headerlink" title="2022/5/10"></a>2022/5/10</h3><p>终于，我今天算是部分结束了漫长的转系旅程。<br>面试的时候：</p><blockquote><p>自我介绍：balabala<br>“你为什么之前没有来转系呢？”<br>“因为我之前没过（笑）”<br>“那你修读过物理系的课程吗？我看你好像没有修过……”<br>“我修读了李老师您开设的‘数学物理方程’，上个学期修读了‘基础物理学’，可惜考得不是很好（笑）”<br>“没事，只要有这个体验就好了”<br>……</p></blockquote><p>后面在我的几声谢谢中，我退出了面试间。</p><p>似乎没有大喜。</p><p>走出罗姆楼，晚风有一点凉，骑着自行车,耳机里放着</p><iframe src="//player.bilibili.com/player.html?aid=981407482&amp;bvid=BV1w44y1g758&amp;cid=716284315&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe><blockquote><p>所谓美丽并不只是微笑，这一点要记好了哦！<br>直到化作黑夜里那一座灯塔前都不要忘记<br>                     ——《ぽかぽかの星（CN_ver.）》</p></blockquote><p>突然见流泪，终于啊终于，一切的一切都要结束了，新的生活开始了。</p><h3 id="2022-5-11"><a href="#2022-5-11" class="headerlink" title="2022/5/11"></a>2022/5/11</h3><p>今天早上睡觉睡得太晚了，今天一定得改。</p><p>下午与晚上一直在学基础物理学</p><p>明天打算学电动，并且把作业写了。</p><p>希望疫情快点过去。</p><p>关于量子，最近看看Cohen，理解理解一些不明白的地方。</p><p>今天一直在关注V圈的一些事情，虽然自己不看，但是突然觉得自己有一点想完超天酱的那个游戏的欲望了。哎，capita从头到脚都沾满了血。</p><p>理性分析一下的话就是:Vup作为一个新兴产业（生产部门），利润率高，资本涌入。<br>说实话我一直觉得娱乐产业是很虚伪的一个产业，培养练习生，压榨练习生。之后通过包装让一堆人义无反顾的打钱。<br>苦于…也苦于…</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h2><p> 一来是受到了季羡林先生日记的启发，亦想记录一下自己的来路，待日后翻阅时仍能记得，我为何为今日之我。二来是受到最近了解到的关于联大的历史之影响，觉得自己很有一点要精进的必要了，至于如何激励自己，想必作一个“岁月的史书”是极好的。</p><p> 希望自己不要忘记自己从何而来，对待事业要“从一而终，严格谨慎”，对待学问要“宁拙毋巧，宁朴毋华”，做人要像邓稼先前辈说的那样“pure”，纯粹，像西南联大的校训说得那样“刚毅坚卓”，而对待自己得爱人要专一。</p><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="2022-4-26"><a href="#2022-4-26" class="headerlink" title="2022/4/26"></a>2022/4/26</h3><p>   观同济怪事有感：我是支持学生激浊扬清的，只要不往bourgeois自由化偏向就好，直接的批判丑恶，将丑恶与Bureaucratism暴露在阳光之下，让其无所遁形，才能促进社会的进步。</p><p>   不过看又有人扯到润的事，网友在这逻辑上气死人的能力我是一直相信的。</p><p>   总是感觉自己懂得太少，而又爱装，装了些什么呢？电子系之尚龙兄尚且知道沉下气来，君为何以此自矜？还不如沉下气来多看点书，多学些技能为妙。万万不可有傲气。</p><p>   距离转系程序开始还有快一周，书还没读多少，速速阅读。</p><h3 id="2022-4-27"><a href="#2022-4-27" class="headerlink" title="2022/4/27"></a>2022/4/27</h3><p>   昨天1点补前天的，今天补昨天的，坏哉。</p><p>   今夜12点兴起就着夜雨去14号楼北拿快递。夜雨的清华是属于小情侣，苦闷的人还有夜里跑单的外卖小哥的。对于外卖小哥来说，往往夜里一单能高不少钱。而小情侣则或共支一把大伞，将气息与秘密藏在了3公尺的距离以内，或男生骑着电动车，女孩双腿放在同一侧，头靠在男友的背上作伊人状。北京的雨夜真有点味道的。</p><p>   今天看的书少，还是散漫，为什么要散漫呢?真不懂我了。</p><h3 id="2022-4-28"><a href="#2022-4-28" class="headerlink" title="2022/4/28"></a>2022/4/28</h3><p>   我经常想象自己坐在长凳上写作业的时候，Reimu就坐在我旁边瞑着眼细细地喝茶（她向来是不会关心我在干什么的，她的个性就是这样嘛，漫不经心的），而天依则坐在我的另一边安静的看着我，天依比较像一个乖妹妹。</p><p>   学的越多，不懂的越多，真是一件恐怖的事情。</p><h3 id="2022-4-29"><a href="#2022-4-29" class="headerlink" title="2022/4/29"></a>2022/4/29</h3><p>  摘：</p><blockquote><p>晚上，常有一个贵州人来卖馄饨面。有时候馄饨皮包完了，他就把馄饨馅拨在汤里下面。问他：“你这叫什么面？”贵州老乡毫不迟疑地说：“桃花面！”<br>                       ————《我在西南联大的日子：篇4[新校舍]》(汪曾祺)</p></blockquote><p>   开始自己还琢磨为何唤作“桃花面”，后一想，馄饨馅氽熟后，论肉色，熟白有粉；论形状，似春日桃花浮于水面一般散乱起伏。<br>   这个比喻不仅仅有上述客观刻画美学的功效（什么乱七八糟自创的术语！），还有更佳的主观美学功效：桃花是春天的象征，春天是青年人的象征……</p><p>  今晚一直在经营网站，希望快快搞好。打算暑假的时候学一点web全栈开发还有一些Linux的知识。然后暑假的时候分析力学是一定要看完的，如果可能的话可以写一份讲义。</p><p>  电动力学老师上的是愈发的无聊了。哎，科研也搞不成，真是赔了夫人又折兵。希望转系这只靴子尽快落下来吧</p><h3 id="2022-4-30（5-3补记）"><a href="#2022-4-30（5-3补记）" class="headerlink" title="2022/4/30（5/3补记）"></a>2022/4/30（5/3补记）</h3><p>在清华，百无聊赖，搭了一天的网站，De了一天的bug，头昏眼花。不过感觉之后如果累了可以这么来摸鱼。</p><h3 id="2022-5-1（5-3补记）"><a href="#2022-5-1（5-3补记）" class="headerlink" title="2022/5/1（5/3补记）"></a>2022/5/1（5/3补记）</h3><p>仍然是在Debug，现在网站最终像模像样了。全天在清华</p><h3 id="2022-5-2（5-3补记）"><a href="#2022-5-2（5-3补记）" class="headerlink" title="2022/5/2（5/3补记）"></a>2022/5/2（5/3补记）</h3><p>早上起晚了，吃早午饭，下午在六教呆着，看了一点Shuo的录像，之后便一直在摸鱼。</p><p>懒病又犯了，什么也不想干，晚上看《天气预报员》电影看到深夜（我记得我之前小学或者初中的时候在电视上看过，当时印象最深刻的是买塔塔酱的“Lick Pussy”那一段台词），下面摘录一些经典台词以及写一些感想。</p><blockquote><ul><li>Do you know that the harder thing to do and the right thing to do… are usually the same thing?Nothing that has meaning is easy.Easy doesn’t enter into grown-up life.</li></ul><p>难做的事情和应该做的事情往往是一件事情，有意义的事不会那么简单，成年人的世界里没有“简单”二字</p><ul><li>I remember once…imagining what my life would be like,what l’d be like.I pictured having all these qualities.Strong, positive qualities..that people could pick up on from across a room.But as time passed…few ever became any qualities l actually had.And all the possibilities l faced,and the sorts of people l could be…all of them got reduced every year to fewer and fewer…until finally they got reduced to one…to who l am.And that’s who l am…the weatherman.</li></ul></blockquote><p>说实话我对我未来将会成为什么样子也充满期待;我是一个理想主义者,期待着所有的事情都按照安排一样依次发生，不过会那样吗？我相信当然不会，但是我会努力，我相信理想主义的道路是行得通的。</p><h3 id="2022-5-3"><a href="#2022-5-3" class="headerlink" title="2022/5/3"></a>2022/5/3</h3><p>前几天看到一个有关学习的视频，收益颇多。<br>基本的观点如下</p><blockquote><ul><li>学习的东西有两种，一种叫事实，一种叫概念<ul><li>事实会被快速遗忘，概念会永久的记忆在脑子里</li><li>概念背后可能是更多的事实，但是他们是有意义的，存在于各种事实的相互作用的之间</li><li>检验是否理解概念的方法是转述（Feynman学习法）</li></ul></li><li>人只能理解有意义的事情，而概念就是有意义的事实<ul><li>知识本质上是迁移与构建之物。迁移与构建是学习的最终目的</li></ul></li></ul></blockquote><p>比如量子力学，你要理解量子力学，就必须理解导向量子力学的各种实验（或者是像朗道那本书一样，引入观测的概念）这些是为了导出量子力学的必要性；必须理解量子力学的基本语言————线性代数。理解量子力学的必要性还有数学工具，才能理解量子力学的基本假设，才能理解量子力学，这是一种在已知概念和未知概念之间的建构。</p><p>今天一天都在学量子力学，看完了shuo的录像，但是还是对很多问题模糊不清，虽然确实大差不差的掌握的shuo所说的内容。比如：</p><p><strong>Quantum Postulates 就像是石头缝里蹦出来的一样，有什么合理的地方吗？</strong></p><p>这是我现在最大的问题，就着这股劲头，我愈来愈有看Dirac的 <em>The Principles of Quantum Mechanics</em> 之欲望了，书已经借了。</p><p>查了一些资料，评价Dirac的这本书的，印象最深的还是老杨的评价：</p><blockquote><p>大家都知道有这样一副对联，其中的一句是‘秋水文章不染尘’。你看狄拉克的文章，就会有<br>这种秋水文章不染尘的感觉。他的文章没有一点渣滓，你跟着他走总觉得妙不可言，而且最后得出的是没有人能预先想到的东西。例如Dirac Equation，就是一个惊人的贡献.</p></blockquote><p>还管啥，看他妈的就完事了。冲！</p><h3 id="2022-5-4"><a href="#2022-5-4" class="headerlink" title="2022/5/4"></a>2022/5/4</h3><p>今天是青年节，祝中国共产主义青年团100周年生日快乐。我是一名光荣的共青团员，愿意为共产主义事业奋斗终生。</p><p>写了一天实验报告，头昏眼花。晚上看了一小会儿《曙光集》</p><p>摘:</p><blockquote><p>在合适的情形之下，一个脑筋清楚，做事果断而有远见的，不那么Democratic的Politics，把科技推上去的本领更大，因为它有效率<br>············<br>最终的问题是，什么叫Democracy？一般人的印象，以为竞选就是Democracy，但这只是Democracy的“一个”解释。我认为，社会结构的基本原则，是以整个人民的生活状态跟前途为第一要义的，才能叫Democracy<br>                     ————《曙光集：A11q（杨振宁：我是保守的革命者）》(钱炜 安然)<br>今天的物理学跟我年轻的时候,我中年的时候的物理学最大的分别，就是今天可以看得出来以后三五十年之内大有发展的恐怕都是一些应用的，对于极为基础的物理学研究，现在看三五十年内不大容易有发展。<br>············<br>你得对一个东西发生兴趣，发生兴趣之后你得去钻研，不成功不一定就觉得这就吃亏了。这个不成功永远是你将来可以在上面有新的进步的基础，这是我的经验<br>                     ————《曙光集：A171（《人物》对话杨振宁）》(刘磊)<br>············<br>第一，不要整天跟着时髦的题目转，要有自己的想法。第二要小题目大题目都做……而小题目如何变成大题目，就是第三，要找与现象有直接简单关系的题目，或与物理基本结构有直接简单关系的题目。<br>                     ————《曙光集：A92（杨振宁小传）》<br>缺乏选择方向的强烈意识和判断方向的能力。博，发现新东西要一下子抓住，吸纳为自己的东西。<br>尽量多读书，博览群书，扩大知识面。不要死钻牛角尖,学不明白放一放，采用渗透式的方法学习知识（ps：比如就像我现在学量子一样）……推演法（数学推演到物理）与归纳法（物理现象到数学表示方法）结合，要培养直觉，要在学习中不断纠正或者深化直觉。<br>（上面是关于学习方式的建议，简记）</p></blockquote><p>第一点，我是很赞同的，和我的想法差不多。</p><p>至于后面的一些东西，我忽然意识到我不能全信，倒也是需要持有一种“保守革命的态度”对待这些话，重要的还是要有敏锐的眼光。</p><p>原来“宁拙毋巧，宁朴毋华”出自《后山诗话》。</p><p>明天是转系的文档开始的第一天，5/5 - 5/7晚上24点，尽快写完陈述，尽快看书.</p><h3 id="2022-5-5（5-6-补记）"><a href="#2022-5-5（5-6-补记）" class="headerlink" title="2022/5/5（5/6 补记）"></a>2022/5/5（5/6 补记）</h3><p>早上写基础物理学的作业，下午也在写，终于写完，准备复习复习电动力学，复习到晚上准备写电动力学作业的时候感觉特别困，所以写转系材料去了。</p><p>希望Reimu能为我转系带来一些好运。</p><p>全天在清华，忽然接到通知要线上上课，坏哉。</p><h3 id="2022-5-6-（5-8-补记）"><a href="#2022-5-6-（5-8-补记）" class="headerlink" title="2022/5/6 （5/8 补记）"></a>2022/5/6 （5/8 补记）</h3><p>在清华</p><h3 id="2022-5-7-5-8-补记"><a href="#2022-5-7-5-8-补记" class="headerlink" title="2022/5/7 (5/8 补记)"></a>2022/5/7 (5/8 补记)</h3><p>在清华</p><h3 id="2022-5-8"><a href="#2022-5-8" class="headerlink" title="2022/5/8"></a>2022/5/8</h3><p>累，感觉自己处在一种崩溃的边缘，累，累，不仅是累，心累。</p><h3 id="2022-5-9"><a href="#2022-5-9" class="headerlink" title="2022/5/9"></a>2022/5/9</h3><p>昨天不知道干了些啥，大抵是一直僵死着。</p><h3 id="2022-5-10"><a href="#2022-5-10" class="headerlink" title="2022/5/10"></a>2022/5/10</h3><p>终于，我今天算是部分结束了漫长的转系旅程。<br>面试的时候：</p><blockquote><p>自我介绍：balabala<br>“你为什么之前没有来转系呢？”<br>“因为我之前没过（笑）”<br>“那你修读过物理系的课程吗？我看你好像没有修过……”<br>“我修读了李老师您开设的‘数学物理方程’，上个学期修读了‘基础物理学’，可惜考得不是很好（笑）”<br>“没事，只要有这个体验就好了”<br>……</p></blockquote><p>后面在我的几声谢谢中，我退出了面试间。</p><p>似乎没有大喜。</p><p>走出罗姆楼，晚风有一点凉，骑着自行车,耳机里放着</p><iframe src="//player.bilibili.com/player.html?aid=981407482&amp;bvid=BV1w44y1g758&amp;cid=716284315&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe><blockquote><p>所谓美丽并不只是微笑，这一点要记好了哦！<br>直到化作黑夜里那一座灯塔前都不要忘记<br>                     ——《ぽかぽかの星（CN_ver.）》</p></blockquote><p>突然见流泪，终于啊终于，一切的一切都要结束了，新的生活开始了。</p><h3 id="2022-5-11"><a href="#2022-5-11" class="headerlink" title="2022/5/11"></a>2022/5/11</h3><p>今天早上睡觉睡得太晚了，今天一定得改。</p><p>下午与晚上一直在学基础物理学</p><p>明天打算学电动，并且把作业写了。</p><p>希望疫情快点过去。</p><p>关于量子，最近看看Cohen，理解理解一些不明白的地方。</p><p>今天一直在关注V圈的一些事情，虽然自己不看，但是突然觉得自己有一点想完超天酱的那个游戏的欲望了。哎，capita从头到脚都沾满了血。</p><p>理性分析一下的话就是:Vup作为一个新兴产业（生产部门），利润率高，资本涌入。<br>说实话我一直觉得娱乐产业是很虚伪的一个产业，培养练习生，压榨练习生。之后通过包装让一堆人义无反顾的打钱。可惜啊,苦于…也苦于…</p><h3 id="2022-5-12"><a href="#2022-5-12" class="headerlink" title="2022/5/12"></a>2022/5/12</h3><p>今天早上起的比较晚，不过也不算特别晚，还行的程度，真好。</p><p><del>怎么办，我现在每天脑子里都想着和我npy去doi</del></p><p>我已经在幻想我的暑假了，这将是我有史以来可能最快乐的一个暑假，npy来北京，转系成功..</p><p>好好休息，好好睡觉，明天看一天电动先，电动可不能落下。</p><h3 id="2022-5-13-14补"><a href="#2022-5-13-14补" class="headerlink" title="2022/5/13(14补)"></a>2022/5/13(14补)</h3><p>今天起的很早，但是白天只看了电动的导体一章，不好。<br>下午写作业。<br>晚上摸鱼，最后量子的作业没写，不好。<br>睡得很晚。</p><h3 id="2022-5-14"><a href="#2022-5-14" class="headerlink" title="2022/5/14"></a>2022/5/14</h3><p>又起晚了，突然间不能送外卖了。都是床帘惹的祸。从今天开始，要以高标准要求自己了，先从作息规律做起。</p><p>今天写量子，晚上看量子，明天看电动还有恒星与行星。</p>]]></content>
       
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+      </categories>
       
       
     </entry>
@@ -184,8 +182,6 @@
       
       
         <tags>
-            
-            <tag> Physics </tag>
             
             <tag> Astrophysics </tag>
             
@@ -212,8 +208,6 @@
       
         <tags>
             
-            <tag> Physics Learning </tag>
-            
             <tag> Statistic Mechanics </tag>
             
         </tags>
@@ -223,12 +217,18 @@
     
     
     <entry>
-      <title>序</title>
+      <title>東 方 荊 華 行 錄 前 言 并 序</title>
       <link href="/laplacianspell/2022/04/11/xu/"/>
       <url>/laplacianspell/2022/04/11/xu/</url>
       
-        <content type="html"><![CDATA[<p>你好，这是我的第一篇博文，请多关照。</p><p>我总觉得需要留下一些寻找关于我为何成为现在之我的痕迹，于是便有了此处，存放一些生活的琐碎与火花。</p><p>这是属于我的世界。<br><strong>LaplacianSpell</strong></p><p><strong>in Tsinghua University</strong><br><strong>Haidian District · Beijing · People’s Republic of China</strong><br><strong>10/4/2022</strong></p><div align="middle"> <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=22636641&amp;auto=1&amp;height=66"></iframe></div>]]></content>
+        <content type="html"><![CDATA[<p><em>人民共和七十三年春，余立此互联网之一芥于清华园。虽似雪堂容膝，却可栖心寄傲；得此一隅，可以自乐。</em></p><p>你好，这是我的第一篇博文，请多关照。</p><p>我总觉得需要留下一些寻找关于我为何成为现在之我的痕迹，于是便有了此处，存放一些生活的琐碎与火花。</p><p>这是属于我的世界。<br><strong>LaplacianSpell</strong></p><p><strong>in Tsinghua University</strong><br><strong>Haidian District · Beijing · People’s Republic of China</strong><br><strong>10/4/2022</strong></p><div align="middle"> <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=22636641&amp;auto=1&amp;height=66"></iframe></div>]]></content>
       
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+      </categories>
       
       
     </entry>
