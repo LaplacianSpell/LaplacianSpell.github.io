@@ -4,6 +4,69 @@
   
     
     <entry>
+      <title>Math-2022-6-Differential-Geometry-Intro</title>
+      <link href="/2022/06/18/math-2022-6-differential-geometry-intro/"/>
+      <url>/2022/06/18/math-2022-6-differential-geometry-intro/</url>
+      
+        <content type="html"><![CDATA[<p>为了读懂分析力学讲义写的</p><h2 id="楔积-外积-的引入">楔积（外积）的引入</h2><p>楔积的引入为了<strong>简化计算</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Mathematics </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Differential Geometry </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2022/06/18/physics-2022-6-a-m-constrain/"/>
+      <url>/2022/06/18/physics-2022-6-a-m-constrain/</url>
+      
+        <content type="html"><![CDATA[      <div class="mume markdown-preview  ">      <p>动力学的出发点在于描述与预测系统的演化方向.</p><h2 class="mume-header" id="describe-system">Describe System</h2><p><strong>经典力学</strong>中描述系统的力学状态，只需要描述系统中每一个质点的<strong>位矢</strong>与<strong>速度</strong>.只需要知道这两个<strong>独立变量</strong>，系统之后的演化方向可以通过牛顿定律唯一确定.</p>      </div>                                                  ]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Physics-2022-6-A.M.-Constrain</title>
+      <link href="/2022/06/18/physics-2022-6-a-m-constrain/"/>
+      <url>/2022/06/18/physics-2022-6-a-m-constrain/</url>
+      
+        <content type="html"><![CDATA[<p>动力学的出发点在于描述与预测系统的演化方向.</p><h2 id="describe-system">Describe System</h2><p><strong>经典力学</strong>中描述系统的力学状态，只需要描述系统中每一个质点的<strong>位矢</strong>与<strong>速度</strong>.只需要知道这两个<strong>独立变量</strong>，系统之后的演化方向可以通过牛顿定律唯一确定.</p><p>自由质点的位置矢量和速度矢量可以在不同的正交曲面坐标系下由三个独立分量唯一确定.</p><blockquote><p>我们由此定义<br><strong>Define:能唯一确定系统的位形(Phase Space)所需要的独立坐标个数称为系统自由度</strong></p></blockquote><p>简单的例子，由N个质点组成的自由质点系自由度为3N.</p><p>如果知道了系统所有独立坐标及其对时间的一阶导数，我们就能唯一确定系统的当前状态.</p><h2 id="constrains">Constrains</h2><blockquote><p><strong>Define:对系统中的位矢以及速度加以几何的或者是运动学的限制，称为约束</strong></p></blockquote><p>下面解释“几何”与“运动学”的含义</p><ul><li><strong>Remark</strong><ul><li><p>几何<br>几何就是系统内禀的对于<strong>坐标本身</strong>的刚性，例如固定一端的刚性杆，设原点在固定端，则自由端的坐标需要满足杆长不变的方程.</p></li><li><p>运动学<br>是系统内禀的对于<strong>坐标演化方向</strong>的刚性，例如水平面上滚轮的质心速度需要与滚轮滚动方向的自由度一致.</p></li></ul></li></ul><p>约束可以记作 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Φ</mi><mo stretchy="false">(</mo><mtext mathvariant="bold">r</mtext><mo separator="true">,</mo><mover accent="true"><mtext mathvariant="bold">r</mtext><mo>˙</mo></mover><mo separator="true">,</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Phi(\textbf{r},\dot{\textbf{r}},t) = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">Φ</span><span class="mopen">(</span><span class="mord text"><span class="mord textbf">r</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6813em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord textbf">r</span></span></span></span><span style="top:-3.01344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.13889em;"><span class="mord">˙</span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></p><p>当然也有是不等号的单面约束（可解约束）</p><p>约束可以按照对运动形式的影响或者对研究运动的方法之影响进行分类。</p><h3 id="完整约束与非完整约束">完整约束与非完整约束</h3><p>首先定义几何约束与微分约束</p><blockquote><p><strong>Define:</strong><br>用点的坐标以及时间表示的有限方程（非微分方程）为<strong>几何约束</strong>.<br>一般形式： $$F_\alpha(x^{1}_i,x^{2}<em>i,x^3_i,t)=0 \  (i=1,2,…,N; \alpha = 1,2,…,d &lt; 3N)$$<br>此处要求约束数目小于自由度<br>用坐标，坐标对时间的导数，时间表示的约束为<strong>微分约束</strong>.<br>一般形式: $$F</em>{\beta}(x^{1}_i,x^2_i,x^3_i,\dot{x}^1_i,\dot{x}^2_i,\dot{x}^3_i,t) = 0 \  (i=1,2,…,N; \beta = 1,2,…,d \leq 3N)$$</p></blockquote><p>借助上述定义我们进一步定义</p><blockquote><p>几何约束与可积分的微分约束为<strong>完整约束</strong>.<br>不可以积分的微分约束为<strong>非完整约束</strong>.<br>只要一个系统存在非完整约束，那么这个系统就是<strong>非完整系统</strong>.</p></blockquote><p>下面解释“可积”：</p><p>可积，在这里即找到坐标之间的方程，且方程等价于约束的微分方程.(不是能够找到坐标对时间的函数【即通常意义下的解坐标的微分方程】)</p><p>进一步的，在相空间意义下的，可积性在这里指的是能够确定位形空间内的一张曲面，且满足约束的所有相轨道都在曲面上；而通常意义下的可积性指的是找到一个满足约束的相轨迹（不一定构成曲面）.</p><p>可以在不完整约束中进一步定义</p><blockquote><p><strong>线性~</strong>：特指对坐标的速度分量的线性（系数仅是坐标和时间的函数）<br>一般形式：$$\sum_{i=1}^{N}(A_i(x^1,x^2,x^3,t)\dot{x}^1_i+B_i(x^1,x^2,x^3,t)\dot{x}^2_i+C_i(x^1,x^2,x^3,t)\dot{x}^3_i)+D(x^1,x^2,x^3,t) = 0$$</p></blockquote><p>可以在线性的基础上进一步定义,若D为0，则为齐次，否则为非齐次.</p><p>非线性非完整约束例子（Appell-Hamel 椅子轮）</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Physics </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Analytical Mechanics </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Suibi01</title>
       <link href="/2022/06/18/suibi01/"/>
       <url>/2022/06/18/suibi01/</url>
