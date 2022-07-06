@@ -1,3 +1,3 @@
-# UltimateEuphoriaEric.github.io
+# LaplacianSpell.github.io
 
 # Personal Blog Page
