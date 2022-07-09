@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>IT-2022-7-DevelopingTool-V-Modern-C++/Compile-Tools</title>
+      <link href="/2022/07/09/it-2022-7-developingtool-v-modern-c-compile-tools/"/>
+      <url>/2022/07/09/it-2022-7-developingtool-v-modern-c-compile-tools/</url>
+      
+        <content type="html"><![CDATA[<h2 id="makefile">Makefile</h2><p>makefile 用来处理大量的文件编译的问题，因为头文件之间引用等等问题，如果不好好处理大量文件编译的问题，很容易会出现编译错误.</p><p>makefile 就相当于告诉编译器如何编译</p><p>由于MF的可读性超级差，并且不能跨平台使用，因此我们现在多用CMake管理项目</p><h2 id="cmake">CMake</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> Computer Science </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+            <tag> CMake </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>IT-2022-7-MultiThread</title>
       <link href="/2022/07/08/it-2022-7-multithread/"/>
       <url>/2022/07/08/it-2022-7-multithread/</url>
