@@ -1,0 +1,277 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>IT-2022-7-DevelopingTool-V-Compile-Tools | 東 方 荊 華 行 錄</title><meta name="author" content="LaplacianSpell"><meta name="copyright" content="LaplacianSpell"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="C&amp;#x2F;C++ Compiler Tools on LinuxMulti-File Compiler Tools目标导向： 对于数据科学的处理，我们通常有一套较为长而且复杂的数据处理管道，其中涉及到多个文件之间十分复杂的依赖关系。  倘若每一次数据处理都需要手动的一层一层执行流水线的每一步，那"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://laplacianspell.github.io/2022/07/09/IT-2022-7-DevelopingTool-V-Modern-C-Compile-Tools/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: LaplacianSpell","link":"链接: ","source":"来源: 東 方 荊 華 行 錄","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'IT-2022-7-DevelopingTool-V-Compile-Tools',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-25 11:54:17'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2023/03/29/YL7VB8DpSN9TzeO.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">75</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 博客档案</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 杂项</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/physics/"><i class="fa-fw fas fa-atom"></i><span> 物理</span></a></li><li><a class="site-page child" href="/math/"><i class="fa-fw fas fa-square-root-variable"></i><span> 数学</span></a></li><li><a class="site-page child" href="/cs/"><i class="fa-fw fas fa-code"></i><span> 计算机科学</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文艺记录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/art/"><i class="fa-fw fas fa-book"></i><span> 三次元文艺</span></a></li><li><a class="site-page child" href="/nijigen/"><i class="fa-fw fas fa-face-grin-squint-tears"></i><span> 二次元文艺</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/To-Do-list/"><i class="fa-fw fas fa-tags"></i><span> To-Do list</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于&amp;留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2022/10/12/saeEkiw4S6dpVyq.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="東 方 荊 華 行 錄"><span class="site-name">東 方 荊 華 行 錄</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 博客档案</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 杂项</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/physics/"><i class="fa-fw fas fa-atom"></i><span> 物理</span></a></li><li><a class="site-page child" href="/math/"><i class="fa-fw fas fa-square-root-variable"></i><span> 数学</span></a></li><li><a class="site-page child" href="/cs/"><i class="fa-fw fas fa-code"></i><span> 计算机科学</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文艺记录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/art/"><i class="fa-fw fas fa-book"></i><span> 三次元文艺</span></a></li><li><a class="site-page child" href="/nijigen/"><i class="fa-fw fas fa-face-grin-squint-tears"></i><span> 二次元文艺</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/To-Do-list/"><i class="fa-fw fas fa-tags"></i><span> To-Do list</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于&amp;留言板</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">IT-2022-7-DevelopingTool-V-Compile-Tools</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-09T12:03:40.000Z" title="发表于 2022-07-09 20:03:40">2022-07-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-25T03:54:17.472Z" title="更新于 2023-09-25 11:54:17">2023-09-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Computer-Science/">Computer Science</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="IT-2022-7-DevelopingTool-V-Compile-Tools"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="C-C-Compiler-Tools-on-Linux"><a href="#C-C-Compiler-Tools-on-Linux" class="headerlink" title="C&#x2F;C++ Compiler Tools on Linux"></a>C&#x2F;C++ Compiler Tools on Linux</h1><h1 id="Multi-File-Compiler-Tools"><a href="#Multi-File-Compiler-Tools" class="headerlink" title="Multi-File Compiler Tools"></a>Multi-File Compiler Tools</h1><p>目标导向：</p>
+<p>对于数据科学的处理，我们通常有一套较为长而且复杂的数据处理管道，其中涉及到多个文件之间十分复杂的依赖关系。</p>
+<p><img src="https://s2.loli.net/2022/07/26/G4N85mqAkphJC3w.png" alt="流水线"></p>
+<p>倘若每一次数据处理都需要手动的一层一层执行流水线的每一步，那么当数据有更新或者流水线过于复杂等等的时候，就不利于其他的工作者复现你的数据处理过程。</p>
+<p>于是乎，就有了一种通用的自动的且规范化编译数据流水线的需求，那么 GNU Make 等等自动编译的工具应运而生。</p>
+<h2 id="什么是-Makefile"><a href="#什么是-Makefile" class="headerlink" title="什么是 Makefile"></a>什么是 Makefile</h2><p>makefile 本质上就是将如何编译的过程以一种模式记录了下来</p>
+<p>makefile 用来处理大量的文件编译的问题，如果不按照规范处理大量文件编译的问题，很容易会出现编译错误。</p>
+<p>makefile 就相当于告诉编译器如何编译，像一个 Shell 脚本一样，mf 文件告诉编译器哪些文件先编译，哪些文件后编译，哪些文件重新编译等等。自动化的完成数据流水线</p>
+<p>也就是说 MF 是一种<strong>类似于 Verilog 的描述性语言</strong>，描述文件之间的输入输出的编译关系</p>
+<div class="note primary warning flat"><p>由于 MF 的可读性超级差 (语法不直观)，并且不能跨平台使用，因此我们现在多用 CMake 管理需要用 MF 来帮助编译的 C++ 项目（当需要编译的东西越来越多的时候）如果仅仅需要了解 CMake，请跳过之后对 MF 语法的介绍</p>
+<p>P.S. 小的项目可以用一用 MF</p>
+</div>
+
+<h2 id="GNU-make-工具"><a href="#GNU-make-工具" class="headerlink" title="GNU make 工具"></a>GNU make 工具</h2><p>make 就是一个命令。</p>
+<p>它用来解释 MF 文件中的指令，从 MF 文件中获得如何编译我的文件的信息，</p>
+<p>我们只需要以<strong>MF</strong>的方式告诉 GNU make 命令我的文件之间<strong>生成的逻辑关系</strong>即可，而在一次编译过程中中间文件缺少没有，<strong>并不需要我们关心</strong>，Make 工具会根据 MF 告诉的编译过程自动帮我们生成缺少或者是版本落后的中间文件，大大的自动化了我们处理大量的数据流</p>
+<p>下面我将梳理 MF 的语法</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>请时刻记住 MF 是一个<strong>描述性语言</strong>，他是一个<strong>函数式编程</strong>的语言，像 Verilog 一样，只描述了<strong>某一个模块的输入输出之间的关系</strong>.没有语句之间的<strong>控制流</strong></p>
+<p>正如同 Verilog 的基本单元 Module 一样，MF 文件包括一系列编译的<strong>规则</strong>，这是 MF 的基本语法单元</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="section">&lt;target&gt;: &lt;prerequisites 1&gt; &lt;prerequisites 2&gt; ...</span></span><br><span class="line">    command 1</span><br><span class="line">    command 2</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+
+<p>其中 target 是我们在这个规则希望生成的文件的名<br>而 pre1，pre2…等是这个规则生成文件过程中需要输入文件<br>而 command 就描述的是<strong>生成过程</strong>，一系列命令，可以是 Shell 的命令，也可以是内置函数和自己构造的函数等等（<em>os:他妈的就是 Verilog 嘛</em>），举例子：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">numbers.csv:</span></span><br><span class="line">    seq 100 &gt; <span class="variable">$@</span></span><br></pre></td></tr></table></figure>
+
+<p>上述就是把 100 的 seq 写道 numbers.csv 里面</p>
+<h2 id="GNU-Make-与-MF-的运行过程"><a href="#GNU-Make-与-MF-的运行过程" class="headerlink" title="GNU Make 与 MF 的运行过程"></a>GNU Make 与 MF 的运行过程</h2><p>如果<code>make</code>指令后面没有接文件名，那么默认是 make <strong>MF 文件中</strong>从开头到文件<strong>存在</strong>依赖关系的第一个<strong>规则</strong>.</p>
+<p>如果指定文件名，那么按照该文件名的依赖关系回溯生成相应的文件</p>
+<p>期间会产生大量的中间文件，我们可以使用以下代码删除不必要的中间文件</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="keyword">.PHONY</span>:clean</span></span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">    rm -rf *.o test</span><br></pre></td></tr></table></figure>
+
+<p><span id="伪目标"></span></p>
+<p>我们可以看到 clean 是不具有依赖关系的<strong>伪目标</strong>，在 make 的时候不会执行下面的指令，只有在<code>make clean</code>的时候才会执行</p>
+<h3 id="伪目标"><a href="#伪目标" class="headerlink" title="伪目标"></a>伪目标</h3><p>在这里简单的展开谈一谈伪目标。后面的一个例子<code>all:</code>也是伪目标</p>
+<p>如果 make 命令的当前路径下有与目标名相同的文件，那么 make 不会成功，会报 up to date.</p>
+<p>此时我们可以将他声明为一个 <strong>特殊目标”.PHONY”</strong> 的依赖。也就是不会查找隐含关系调用。</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><blockquote>
+<p><em><strong>引子</strong></em><br>在一个 MF 的文件之中可能存在一些规则有很长很长的 prerequisites.如果我们希望加入新的 prerequisite，那么可能需要修改很多很多地方，那么如果有一个地方没看到，那就 G 了（笑</p>
+</blockquote>
+<p>为了方便，MF 引入了变量机制，在 MF 中，变量就是一个 alias 标签，用来代替某一个字符串，像 C 里面的<strong>宏定义</strong>，因此在引用变量的时候只需要将变量字符串填入引用的地方再对代码进行理解即可</p>
+<h3 id="变量的赋值"><a href="#变量的赋值" class="headerlink" title="变量的赋值"></a>变量的赋值</h3><p>在 MF 中，变量赋值有两种方法</p>
+<ol>
+<li>eager evaluation: <code>:=</code><br> 立即扩展</li>
+<li>lazy evaluation: <code>=</code><br> 延时扩展<br> 递归扩展<br>等有时间再解释，先用着 eager evaluation<br>（<em>os:他妈的就是 Verilog 嘛，什么阻塞赋值🤣</em>）</li>
+</ol>
+<p>当我们需要引用变量的时候，我们用的语法就是<code>$(&lt;var_name&gt;)</code>，用 dollar 符号直接引用</p>
+<p>同时，MF 内置了一群特殊的变量叫做<strong>自动变量</strong>，其中<strong>target</strong>和<strong>prerequisites</strong>表示当前规律的生成文件名和输入数据文件。当我们要引用的时候使用<code>$^</code> (输入) 和<code>$@</code>（输出），后面当出现新的自动变量时我会再次进行解释。</p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>进一步的，MF 里面还内置的列表</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a:=a.h5 b.h5 c.h5</span><br></pre></td></tr></table></figure>
+
+<p>上述语句定义了一个有三个元素的列表。实际上我们在 prerequisites 位置传入的就是一个列表</p>
+<p>下面给出一个列表的用法作为例子</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">$(a:%.h5=%.png)</span></span><br><span class="line"><span class="comment"># 或者更方便的</span></span><br><span class="line"><span class="section">$(a:.h5=.png)</span></span><br></pre></td></tr></table></figure>
+
+<p>在引用 list 变量 a 的时候使用了<code>:+语句</code>，其中<code>%</code>是 MF 的通配符，后面的语句意思是匹配到形式为<code>*.h5</code>的时候将该文件后缀名改为.png</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>使用内置函数的语法如下</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(func argument1 argument2 ...)</span></span><br></pre></td></tr></table></figure>
+
+<p>实际上可以把函数也看做一个确定结果的变量</p>
+<p>下面给一些函数的例子</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(info <span class="variable">$(a)</span>)</span> <span class="comment"># 变量a的值</span></span><br><span class="line"><span class="variable">$(<span class="built_in">subst</span> .h5,.png,<span class="variable">$(filelist)</span>)</span> <span class="comment"># 将filelist里所有字符串中的.h5都换成.png之后的值</span></span><br></pre></td></tr></table></figure>
+
+<p>下面再展示一种巧妙地批量生成的方式</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">all: $(filelist:.h5=.png)</span></span><br></pre></td></tr></table></figure>
+
+<p>如果我直接在 bash 中输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make all</span><br></pre></td></tr></table></figure>
+
+<p>我就巧妙地利用了一个骗 GNU make 的空 command 规则，帮我一键批量生成了大量数据，这实际上也是<a href="#%E4%BC%AA%E7%9B%AE%E6%A0%87">伪目标</a></p>
+<p>我们也可以再函数中使用 Shell 命令</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">shell</span> command1 | command2 ...)</span></span><br></pre></td></tr></table></figure>
+
+<p>当我们使用上述语句的时候，结果是<strong>标准输出</strong></p>
+<h2 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h2><p>在 MF 中可以应用分支结构，但是在这个地方分支结构某种意义上<strong>也是一种函数</strong></p>
+<p>首先介绍条件结构</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">if</span> CONDITION,THEN-PART[,ELSE-PART])</span></span><br></pre></td></tr></table></figure>
+
+<p>上述函数的值就是经过条件判断之后的结果</p>
+<p>下面介绍循环结构</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">foreach</span> d,x y z,<span class="variable">$(d)</span>)</span></span><br></pre></td></tr></table></figure>
+
+<p>其中有三个参数，第一个参数表示循环变量，第二个参数表示要遍历的列表，第三个参数表示每次遍历输出的值</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C/">C++</a><a class="post-meta__tags" href="/tags/CMake/">CMake</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2022/10/12/saeEkiw4S6dpVyq.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/07/19/IT-2022-7-DevelopingTool-VI-DataStorage/" title="IT-2022-7-DevelopingTool-DataStorage"><img class="cover" src="https://s2.loli.net/2022/05/19/PwptCmuogBqLJyr.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">IT-2022-7-DevelopingTool-DataStorage</div></div></a></div><div class="next-post pull-right"><a href="/2022/07/08/IT-2022-7-MultiThread-Network/" title="IT-2022-7-MultiThread &amp; Network"><img class="cover" src="https://s2.loli.net/2022/05/19/EM1aAT654itsKwl.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">IT-2022-7-MultiThread &amp; Network</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/10/02/Epoll-%E4%B8%8E-Libevent/" title="Epoll 与 Libevent"><img class="cover" src="https://s2.loli.net/2022/05/19/X1QshTWAdGN4tCx.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-02</div><div class="title">Epoll 与 Libevent</div></div></a></div><div><a href="/2022/09/30/IT-2022-10-C-Socket/" title="IT-2022-10-C++ Socket"><img class="cover" src="https://s2.loli.net/2022/05/19/fpjQAMcIH5YVL8b.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-30</div><div class="title">IT-2022-10-C++ Socket</div></div></a></div><div><a href="/2022/10/25/IT-2022-10-CodeTest/" title="IT-2022-10-TestCode"><img class="cover" src="https://s2.loli.net/2022/07/08/insgA4vV5SzkhG7.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-25</div><div class="title">IT-2022-10-TestCode</div></div></a></div><div><a href="/2022/10/25/IT-2022-10-LevelDB-Reading-Report-I/" title="IT-2022-10-LevelDB-Reading-Report-I"><img class="cover" src="https://s2.loli.net/2022/05/19/fpjQAMcIH5YVL8b.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-25</div><div class="title">IT-2022-10-LevelDB-Reading-Report-I</div></div></a></div><div><a href="/2022/11/22/IT-2022-11-DSA-Revise-I/" title="IT-2022-11-DSA Revise"><img class="cover" src="https://s2.loli.net/2022/07/08/insgA4vV5SzkhG7.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-22</div><div class="title">IT-2022-11-DSA Revise</div></div></a></div><div><a href="/2022/12/04/IT-2022-12-DSA-Revise-II/" title="IT-2022-12-DSA-Revise-II"><img class="cover" src="https://s2.loli.net/2022/07/08/xyNw6sA1DaRtTO2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-12-04</div><div class="title">IT-2022-12-DSA-Revise-II</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2023/03/29/YL7VB8DpSN9TzeO.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">LaplacianSpell</div><div class="author-info__description">兴趣使然 的 役ただず</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">75</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/102626754/dynamic"><i class="fab fa-bilibili"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://space.bilibili.com/102626754/dynamic" target="_blank" title="Bilibili"><i class="fab fa-bilibili"></i></a><a class="social-icon" href="https://github.com/LaplacianSpell" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1271927097@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">感谢访问本站，喜欢请收藏 (｡･∀･) ﾉﾞ！本站的所有博文欲转载请与站长联系，未经允许禁止转载！
+
+
+
+
+
+
+
+
+(兄啊，这么屑的文章，有什么转载的必要啊！)</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C-C-Compiler-Tools-on-Linux"><span class="toc-number">1.</span> <span class="toc-text">C&#x2F;C++ Compiler Tools on Linux</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Multi-File-Compiler-Tools"><span class="toc-number">2.</span> <span class="toc-text">Multi-File Compiler Tools</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Makefile"><span class="toc-number">2.1.</span> <span class="toc-text">什么是 Makefile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GNU-make-%E5%B7%A5%E5%85%B7"><span class="toc-number">2.2.</span> <span class="toc-text">GNU make 工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-number">2.3.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GNU-Make-%E4%B8%8E-MF-%E7%9A%84%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">2.4.</span> <span class="toc-text">GNU Make 与 MF 的运行过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AA%E7%9B%AE%E6%A0%87"><span class="toc-number">2.4.1.</span> <span class="toc-text">伪目标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">2.5.</span> <span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E8%B5%8B%E5%80%BC"><span class="toc-number">2.5.1.</span> <span class="toc-text">变量的赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-number">2.5.2.</span> <span class="toc-text">列表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">2.6.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84"><span class="toc-number">2.7.</span> <span class="toc-text">分支结构</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/15/%E5%BB%BA%E7%AB%991%E5%91%A8%E5%B9%B4-%E5%AD%97%E6%95%B0%E6%BB%A110w-%E7%BA%AA%E5%BF%B5/" title="Eine Kleine"><img src="https://s2.loli.net/2022/05/19/Ov5gz4SQXHoj7cV.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Eine Kleine"/></a><div class="content"><a class="title" href="/2023/07/15/%E5%BB%BA%E7%AB%991%E5%91%A8%E5%B9%B4-%E5%AD%97%E6%95%B0%E6%BB%A110w-%E7%BA%AA%E5%BF%B5/" title="Eine Kleine">Eine Kleine</a><time datetime="2023-07-15T08:53:24.000Z" title="发表于 2023-07-15 16:53:24">2023-07-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/04/IT-2023-7-Linux-System-Programming-II/" title="IT-2023-7-Linux-System-Programming-II"><img src="https://s2.loli.net/2022/05/19/X1QshTWAdGN4tCx.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IT-2023-7-Linux-System-Programming-II"/></a><div class="content"><a class="title" href="/2023/07/04/IT-2023-7-Linux-System-Programming-II/" title="IT-2023-7-Linux-System-Programming-II">IT-2023-7-Linux-System-Programming-II</a><time datetime="2023-07-04T06:22:51.000Z" title="发表于 2023-07-04 14:22:51">2023-07-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/01/IT-2023-7-Linux-System-Programming-I/" title="IT-2023-7-Linux-System-Programming-I"><img src="https://s2.loli.net/2022/07/08/xyNw6sA1DaRtTO2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IT-2023-7-Linux-System-Programming-I"/></a><div class="content"><a class="title" href="/2023/07/01/IT-2023-7-Linux-System-Programming-I/" title="IT-2023-7-Linux-System-Programming-I">IT-2023-7-Linux-System-Programming-I</a><time datetime="2023-07-01T07:25:51.000Z" title="发表于 2023-07-01 15:25:51">2023-07-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/16/IT-2023-6-Linux-Tutorial/" title="IT-2023-6-Linux-Tutorial"><img src="https://s2.loli.net/2022/07/08/xyNw6sA1DaRtTO2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IT-2023-6-Linux-Tutorial"/></a><div class="content"><a class="title" href="/2023/06/16/IT-2023-6-Linux-Tutorial/" title="IT-2023-6-Linux-Tutorial">IT-2023-6-Linux-Tutorial</a><time datetime="2023-06-16T10:46:09.000Z" title="发表于 2023-06-16 18:46:09">2023-06-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/12/%E5%9F%BA%E6%9C%AC%E4%B9%90%E7%90%86-I/" title="基本乐理-I"><img src="https://s2.loli.net/2022/10/12/saeEkiw4S6dpVyq.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基本乐理-I"/></a><div class="content"><a class="title" href="/2023/06/12/%E5%9F%BA%E6%9C%AC%E4%B9%90%E7%90%86-I/" title="基本乐理-I">基本乐理-I</a><time datetime="2023-06-12T13:57:33.000Z" title="发表于 2023-06-12 21:57:33">2023-06-12</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://s2.loli.net/2022/05/22/3dV6yLcuJXgxjzs.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By LaplacianSpell</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

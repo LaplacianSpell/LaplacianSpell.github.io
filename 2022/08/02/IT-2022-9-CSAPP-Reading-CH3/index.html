@@ -1,0 +1,269 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>IT-2022-9-CSAPP The Representation of Progamme on Machine Level | 東 方 荊 華 行 錄</title><meta name="author" content="LaplacianSpell"><meta name="copyright" content="LaplacianSpell"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="这一章节讲述的内容是是如何实现程序的机器级别的表示。 机器级别的代码有很重要的两个抽象 指令集体系结构 (ISA Instruction Set Architechture)这一个抽象，使得图灵完备的指令集现在在我的理解中有了两个内涵。  第一个内涵，是将所有的任务，都拆解成有限个通用的操作，这些操"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://laplacianspell.github.io/2022/08/02/IT-2022-9-CSAPP-Reading-CH3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: LaplacianSpell","link":"链接: ","source":"来源: 東 方 荊 華 行 錄","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'IT-2022-9-CSAPP The Representation of Progamme on Machine Level',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-25 11:54:17'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2023/03/29/YL7VB8DpSN9TzeO.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">75</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 博客档案</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 杂项</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/physics/"><i class="fa-fw fas fa-atom"></i><span> 物理</span></a></li><li><a class="site-page child" href="/math/"><i class="fa-fw fas fa-square-root-variable"></i><span> 数学</span></a></li><li><a class="site-page child" href="/cs/"><i class="fa-fw fas fa-code"></i><span> 计算机科学</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文艺记录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/art/"><i class="fa-fw fas fa-book"></i><span> 三次元文艺</span></a></li><li><a class="site-page child" href="/nijigen/"><i class="fa-fw fas fa-face-grin-squint-tears"></i><span> 二次元文艺</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/To-Do-list/"><i class="fa-fw fas fa-tags"></i><span> To-Do list</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于&amp;留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2022/05/19/PwptCmuogBqLJyr.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="東 方 荊 華 行 錄"><span class="site-name">東 方 荊 華 行 錄</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 博客档案</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 杂项</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/physics/"><i class="fa-fw fas fa-atom"></i><span> 物理</span></a></li><li><a class="site-page child" href="/math/"><i class="fa-fw fas fa-square-root-variable"></i><span> 数学</span></a></li><li><a class="site-page child" href="/cs/"><i class="fa-fw fas fa-code"></i><span> 计算机科学</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文艺记录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/art/"><i class="fa-fw fas fa-book"></i><span> 三次元文艺</span></a></li><li><a class="site-page child" href="/nijigen/"><i class="fa-fw fas fa-face-grin-squint-tears"></i><span> 二次元文艺</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/To-Do-list/"><i class="fa-fw fas fa-tags"></i><span> To-Do list</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于&amp;留言板</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">IT-2022-9-CSAPP The Representation of Progamme on Machine Level</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-02T06:22:21.000Z" title="发表于 2022-08-02 14:22:21">2022-08-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-25T03:54:17.472Z" title="更新于 2023-09-25 11:54:17">2023-09-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Computer-Science/">Computer Science</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="IT-2022-9-CSAPP The Representation of Progamme on Machine Level"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>这一章节讲述的内容是是如何实现程序的<strong>机器级别</strong>的表示。</p>
+<p>机器级别的代码有很重要的两个抽象</p>
+<h2 id="指令集体系结构-ISA-Instruction-Set-Architechture"><a href="#指令集体系结构-ISA-Instruction-Set-Architechture" class="headerlink" title="指令集体系结构 (ISA Instruction Set Architechture)"></a>指令集体系结构 (ISA Instruction Set Architechture)</h2><p>这一个抽象，使得图灵完备的指令集现在在我的理解中有了两个内涵。</p>
+<ol>
+<li>第一个内涵，是将所有的任务，都拆解成有限个通用的操作，这些操作构成一个图灵完备的指令集，这就是<strong>通用计算机</strong>的概念</li>
+<li>第二个内涵，是将计算机对底层<strong>硬件操作</strong>的这些操作进行了封装和抽象，成为了一条一条的指令。</li>
+</ol>
+<div class="note primary simple"><p>第一个内涵更本质，但是第二个内涵体现了为什么汇编语言是不同于高级语言的。</p>
+<p>我们都知道语言的进化历史是 机器码 -&gt; 汇编 -&gt; 高级语言，其中机器码是以 0 和 1 表述的硬件级别的操作，而汇编语言简而言之就是提升了可读性的硬件级别操作。</p>
+<p>高级语言则将硬件级别的操作完全封装成一种接近自然语言的方式，从而大大方便了人们的编程，编程“退化”成了思考算法和实现算法。</p>
+</div>
+
+<p>另一个抽象是虚拟内存</p>
+<h2 id="CPU-对汇编语言的可见性"><a href="#CPU-对汇编语言的可见性" class="headerlink" title="CPU 对汇编语言的可见性"></a>CPU 对汇编语言的可见性</h2><p>CPU 有两种经典架构：Princton 架构和 Harvard 架构，两种架构的区别在于是否将存储指令的存储器与存储数据的存储器分开来</p>
+<p>我们在上面谈到了第二个内涵，实际上就是一些计算机的底层在汇编语言层面是可见的了。</p>
+<ul>
+<li>PC (Program Counter)<ul>
+<li>程序计数器内存放的永远是要执行的下一条指令的地址</li>
+</ul>
+</li>
+<li>寄存器堆<ul>
+<li>由特定个数特定长度的寄存器组成，比如 IA32 的 CPU 由 8 个 32bits 寄存器组成</li>
+<li>上面的 32 也是我们常说的 32 位计算机的含义</li>
+</ul>
+</li>
+<li>Condition Codes</li>
+<li>Memory<ul>
+<li>实际上内存已经被抽象出来成为了虚拟内存</li>
+</ul>
+</li>
+</ul>
+<p>此外，Cache 不是汇编语言能够操作的。</p>
+<h2 id="Assembly-Language-的-基本数据结构"><a href="#Assembly-Language-的-基本数据结构" class="headerlink" title="Assembly Language 的 基本数据结构"></a>Assembly Language 的 基本数据结构</h2><p>本文基于 Y86（假）架构，x86 是一种复杂指令集（CISC，与之相对的是 RISC 简单指令集比较规整，长度固定，而 CISC 指令不规整，但是比较兼容高级语言），除去完成一切任务所必须的基本指令之外，x86 指令集还添加了许多集成指令（也就是简单指令集多个指令的集合），这些集成指令是在电路层面上进行实现的，因此会比简单指令集分别执行要快。但是会造成指令集的指令数目增加。同时在实际情况之下 RISC 也不一定就比 CISC 运行的更快（CPI*Cycle）</p>
+<p>汇编语言中数据类型的不同在于 <strong>数据的内存大小</strong> 和 <strong>操作规则</strong> 不同，因此只要指明这两个信息就能确定一个数据的数据类型。</p>
+<p>汇编语言的数据类型有</p>
+<ol>
+<li><p>字</p>
+<p>其中对应有 C 中的 <code>short</code> GAS 后缀为 w(2 bytes)</p>
+</li>
+<li><p>双字 int l (4 bytes)</p>
+</li>
+<li><p>单精度 float s (4 bytes)</p>
+</li>
+<li><p>双精度 double l (8 bytes)</p>
+</li>
+<li><p>扩展精度 long double t </p>
+</li>
+<li><p>字节</p>
+<p> 这个对应只有 <code>char</code> 类型 后缀为 b</p>
+</li>
+</ol>
+<h2 id="数据的访问"><a href="#数据的访问" class="headerlink" title="数据的访问"></a>数据的访问</h2><ul>
+<li>内存（DRAM）在汇编语言中可以看作是一个字节数组，我们依靠地址在字节数组中寻址</li>
+<li>寄存器则是具有特定名称的空间</li>
+</ul>
+<p>我们通过特定的名称来访问给定的寄存器，x86-64 架构中有 16 个寄存器，每个寄存器是 4 words 长度也就是 8 bytes.这些古怪的名称是历史原因。</p>
+<p>现在这 16 个寄存器只有两个作为栈指针而不能随意使用，其余的大部分都可以（“大部分”是因为存在一些指令需要使用特定的寄存器）</p>
+<p>下面我们介绍指令以及其操作数</p>
+<h2 id="操作数的指示符"><a href="#操作数的指示符" class="headerlink" title="操作数的指示符"></a>操作数的指示符</h2><p>我们实现类似于 c 中的<strong>赋值</strong>操作依靠的是命令 <code>movq</code></p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">movq</span> <span class="number">$0x4</span>, %rax</span><br></pre></td></tr></table></figure>
+
+<p>可以看到，每一条指令都有一条或者多条操作数，操作数给出要执行操作的源数据和存放结果的地方</p>
+<p>操作数分为三种</p>
+<ul>
+<li>立即数<br> 立即数可以理解为常数值，用美元符号开头，比如上面的<code>$0x4</code></li>
+<li>寄存器</li>
+<li>存储器（DRAM）</li>
+</ul>
+<p>其中如何对我们想要的寄存器和存储器位置定位，实际上是挺有讲究的，这一套规则叫做<strong>寻址模式</strong></p>
+<ol>
+<li>当我们直接将寄存器名称作为操作数，表示的就是名称对应的寄存器</li>
+<li>当我们直接将一个立即数不带<code>$</code>的作为操作数，表示的是以该立即数作为地址在内存中对应位置的数</li>
+</ol>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2></article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C/">C</a><a class="post-meta__tags" href="/tags/Computer-System/">Computer System</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2022/05/19/PwptCmuogBqLJyr.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/08/02/IT-2022-8-CSAPP-Reading-CH1/" title="IT-2022-8 CSAPP Overview"><img class="cover" src="https://s2.loli.net/2023/03/29/qPDwrSaYd7RkXcF.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">IT-2022-8 CSAPP Overview</div></div></a></div><div class="next-post pull-right"><a href="/2022/08/01/%E5%A4%8F%E5%A4%9C%E6%96%AD%E6%83%B3/" title="夏夜断想"><img class="cover" src="https://s2.loli.net/2022/05/19/Ov5gz4SQXHoj7cV.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">夏夜断想</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/07/08/IT-2022-7-MultiThread-Network/" title="IT-2022-7-MultiThread &amp; Network"><img class="cover" src="https://s2.loli.net/2022/05/19/EM1aAT654itsKwl.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-08</div><div class="title">IT-2022-7-MultiThread &amp; Network</div></div></a></div><div><a href="/2022/09/30/IT-2022-10-C-Socket/" title="IT-2022-10-C++ Socket"><img class="cover" src="https://s2.loli.net/2022/05/19/fpjQAMcIH5YVL8b.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-30</div><div class="title">IT-2022-10-C++ Socket</div></div></a></div><div><a href="/2022/09/06/IT-2022-9-C-Cpp-Review/" title="IT-2022-9-C&#x2F;Cpp Review"><img class="cover" src="https://s2.loli.net/2022/05/19/EM1aAT654itsKwl.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-06</div><div class="title">IT-2022-9-C&#x2F;Cpp Review</div></div></a></div><div><a href="/2022/08/02/IT-2022-8-CSAPP-Reading-CH1/" title="IT-2022-8 CSAPP Overview"><img class="cover" src="https://s2.loli.net/2023/03/29/qPDwrSaYd7RkXcF.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-02</div><div class="title">IT-2022-8 CSAPP Overview</div></div></a></div><div><a href="/2023/02/21/IT-2023-2-CSAPP-CH2/" title="IT-2023-2-CSAPP The Representation of Information in Computer Systems"><img class="cover" src="https://s2.loli.net/2022/05/19/X1QshTWAdGN4tCx.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-21</div><div class="title">IT-2023-2-CSAPP The Representation of Information in Computer Systems</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2023/03/29/YL7VB8DpSN9TzeO.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">LaplacianSpell</div><div class="author-info__description">兴趣使然 的 役ただず</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">75</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/102626754/dynamic"><i class="fab fa-bilibili"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://space.bilibili.com/102626754/dynamic" target="_blank" title="Bilibili"><i class="fab fa-bilibili"></i></a><a class="social-icon" href="https://github.com/LaplacianSpell" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1271927097@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">感谢访问本站，喜欢请收藏 (｡･∀･) ﾉﾞ！本站的所有博文欲转载请与站长联系，未经允许禁止转载！
+
+
+
+
+
+
+
+
+(兄啊，这么屑的文章，有什么转载的必要啊！)</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E9%9B%86%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84-ISA-Instruction-Set-Architechture"><span class="toc-number">1.</span> <span class="toc-text">指令集体系结构 (ISA Instruction Set Architechture)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CPU-%E5%AF%B9%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%9A%84%E5%8F%AF%E8%A7%81%E6%80%A7"><span class="toc-number">2.</span> <span class="toc-text">CPU 对汇编语言的可见性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Assembly-Language-%E7%9A%84-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">3.</span> <span class="toc-text">Assembly Language 的 基本数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E8%AE%BF%E9%97%AE"><span class="toc-number">4.</span> <span class="toc-text">数据的访问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%95%B0%E7%9A%84%E6%8C%87%E7%A4%BA%E7%AC%A6"><span class="toc-number">5.</span> <span class="toc-text">操作数的指示符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text"></span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/15/%E5%BB%BA%E7%AB%991%E5%91%A8%E5%B9%B4-%E5%AD%97%E6%95%B0%E6%BB%A110w-%E7%BA%AA%E5%BF%B5/" title="Eine Kleine"><img src="https://s2.loli.net/2022/05/19/Ov5gz4SQXHoj7cV.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Eine Kleine"/></a><div class="content"><a class="title" href="/2023/07/15/%E5%BB%BA%E7%AB%991%E5%91%A8%E5%B9%B4-%E5%AD%97%E6%95%B0%E6%BB%A110w-%E7%BA%AA%E5%BF%B5/" title="Eine Kleine">Eine Kleine</a><time datetime="2023-07-15T08:53:24.000Z" title="发表于 2023-07-15 16:53:24">2023-07-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/04/IT-2023-7-Linux-System-Programming-II/" title="IT-2023-7-Linux-System-Programming-II"><img src="https://s2.loli.net/2022/05/19/X1QshTWAdGN4tCx.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IT-2023-7-Linux-System-Programming-II"/></a><div class="content"><a class="title" href="/2023/07/04/IT-2023-7-Linux-System-Programming-II/" title="IT-2023-7-Linux-System-Programming-II">IT-2023-7-Linux-System-Programming-II</a><time datetime="2023-07-04T06:22:51.000Z" title="发表于 2023-07-04 14:22:51">2023-07-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/01/IT-2023-7-Linux-System-Programming-I/" title="IT-2023-7-Linux-System-Programming-I"><img src="https://s2.loli.net/2022/07/08/xyNw6sA1DaRtTO2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IT-2023-7-Linux-System-Programming-I"/></a><div class="content"><a class="title" href="/2023/07/01/IT-2023-7-Linux-System-Programming-I/" title="IT-2023-7-Linux-System-Programming-I">IT-2023-7-Linux-System-Programming-I</a><time datetime="2023-07-01T07:25:51.000Z" title="发表于 2023-07-01 15:25:51">2023-07-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/16/IT-2023-6-Linux-Tutorial/" title="IT-2023-6-Linux-Tutorial"><img src="https://s2.loli.net/2022/07/08/xyNw6sA1DaRtTO2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IT-2023-6-Linux-Tutorial"/></a><div class="content"><a class="title" href="/2023/06/16/IT-2023-6-Linux-Tutorial/" title="IT-2023-6-Linux-Tutorial">IT-2023-6-Linux-Tutorial</a><time datetime="2023-06-16T10:46:09.000Z" title="发表于 2023-06-16 18:46:09">2023-06-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/12/%E5%9F%BA%E6%9C%AC%E4%B9%90%E7%90%86-I/" title="基本乐理-I"><img src="https://s2.loli.net/2022/10/12/saeEkiw4S6dpVyq.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基本乐理-I"/></a><div class="content"><a class="title" href="/2023/06/12/%E5%9F%BA%E6%9C%AC%E4%B9%90%E7%90%86-I/" title="基本乐理-I">基本乐理-I</a><time datetime="2023-06-12T13:57:33.000Z" title="发表于 2023-06-12 21:57:33">2023-06-12</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://s2.loli.net/2022/05/22/3dV6yLcuJXgxjzs.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By LaplacianSpell</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
